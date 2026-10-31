@@ -52,6 +52,7 @@ function change(lang){
  for(const id of ['langQuick','langSettings'])if($(id))$(id).value=current;
  try{localStorage.setItem('mymoney-language-v1',current)}catch{}
  schedule();
+ window.dispatchEvent(new Event('mymoney-language-changed'));
 }
 for(const id of ['langQuick','langSettings'])$(id)?.addEventListener('change',e=>change(e.target.value));
 new MutationObserver(schedule).observe(document.body,{subtree:true,childList:true,characterData:true});
