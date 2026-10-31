@@ -51,6 +51,7 @@ function test(){
   assert.equal(Object.values(getState().months).flatMap(x=>x.expenses).length,3);
   assert.equal(getState().categories.find(x=>x.id==='investments').limit,100,'core investment budget must remain unchanged');
   console.log('PASS: quick add, category percentages, monthly rent, edits and preserved investment plan');
-  dom.window.close();
+  // Let pending asynchronous source-fetch errors settle before closing the JSDOM document.
+  setImmediate(()=>dom.window.close());
 }
 test();
