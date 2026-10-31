@@ -246,7 +246,8 @@ html[dir="rtl"] .catHeadV7,html[dir="rtl"] .catFootV7{direction:rtl}
         const choices=state.categories.filter(c=>c.id!=='investments');
         $('expenseCategory').innerHTML=choices.map(c=>'<option value="'+safe(c.id)+'">'+safe(c.name)+'</option>').join('');
         const maxDay=new Date(month.getFullYear(),month.getMonth()+1,0).getDate();
-        $('expenseDate').value=mk()+'-'+String(Math.min(today.getDate(),maxDay)).padStart(2,'0');
+        const now=new Date();
+        $('expenseDate').value=mk()+'-'+String(Math.min(now.getDate(),maxDay)).padStart(2,'0');
         $('expenseTitle').value='';$('expenseAmount').value='';$('formError').textContent='';
         editingExpenseId=null;$('dialogTitle').textContent='Add expense';$('saveExpense').textContent='Save expense';
         const edit=typeof expenseId==='string'?data().expenses.find(e=>e.id===expenseId):null;
