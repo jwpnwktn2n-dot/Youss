@@ -33,7 +33,7 @@ jobs:
       - name: Prepare public website files
         run: |
           mkdir -p _site/data
-          cp index.html manifest.webmanifest icon.svg sw.js .nojekyll _site/
+          cp index.html manifest.webmanifest icon.svg sw.js kdp.js enhancements.js ar-dict.js i18n.js .nojekyll _site/
           cp data/market.json data/news.json _site/data/
           test -s _site/index.html
           python -m json.tool _site/data/market.json > /dev/null
