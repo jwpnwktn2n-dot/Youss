@@ -1,6 +1,6 @@
 {
   "updated": "2026-10-31",
-  "mode": "snapshot",
+  "mode": "auto",
   "ipos": [
     {
       "company": "LAPROPHAN",
@@ -21,6 +21,76 @@
   ],
   "articles": [
     {
+      "title": "IPO de Laprophan : Polymedic, une acquisition moins rentable qu’affiché - Le Desk",
+      "date": "2026-10-30",
+      "source": "Le Desk",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNS3VDYUFiRTJrbFJIRnRSaDRDaUZDei1CWnVkTHM1Wkw2VjB5bDc1WUV3bldCVmJHN3lqcnlKNTAxbVNnd2RORHdramtTWjBTM2pmV0FwWmF3QW1DZlp1dnFxMlN3WUoxbG5xbHU2b3FNVmpHWGJoZ1lKRml6MnQxYjhGTGtTSmxfcVNOWEdWeDNnMTJodXg3UUNMTHNKQQ?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : lancement prochain de deux nouveaux indices de rentabilité - Le Matin.ma",
+      "date": "2026-10-29",
+      "source": "Le Matin.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbHZSNHJVZXZHU2UwcFdIQTlwNDRnLVI5UnplcWctbEtja3ptdUg3T0NqQXBTWEduQnp4YWJSQkl6dG5RYnZsLWJIYUFFTUpwbGJzdE5qUk96MEhpVUZaVjN2bFF5Q2laMm5uMzZsVFJPa0ItbWRWMHRub3NJZ2M4WUtkZDlmZ19NSDdJZGJPSGQwRW9KTnl3NVNqUDBpcFVvSEFjeU9oWU8xdXJ4Q3fSAa4BQVVfeXFMT2x2UjRyVWV2R1NlMHBXSEE5cDQ0Zy1SOVJ6ZXFnLWxLY2t6bXVIN09DakFwU1hHbkJ6eGFiUkJJenRuUWJ2bC1iSGFBRU1KcGxic3ROalJPejBIaVVGWlYzdmxReUNpWjJubjM2bFRST2tCLW1kVjB0bm9zSWdjOFlLZGQ5ZmdfTUg3SWRiT0hkMEVvSk55dzVTalAwaXBVb0hBY3lPaFlPMXVyeEN3?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : le MASI sous pression, les investisseurs dans l’expectative - Industrie du Maroc",
+      "date": "2026-10-29",
+      "source": "Industrie du Maroc",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOZ1ZYOS0xSGljVy05R2VMMnJ4S19ZZ3NUTmRTRlk3SVQtMnpfY1dfZkJkaGQ1cVhlUDlTT0RBLWo1emx1Tnp4Tm9RZzR1cXk5blE2cW02QVNheVdCb3RnT2hfN29GOXNLWHd3NWhJXzRKcTNVRWxwUUMtSE1ham55TFBvdTJKRktTLXZOUVpDMFB0T1JacE1LUlBJa19uTF8yZ1R3?oc=5"
+    },
+    {
+      "title": "IPO Laprophan : acquisition de Polymedic, prévisions de croissance et valorisation - Medias24",
+      "date": "2026-10-29",
+      "source": "Medias24",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQazJmLWs3b0hobzlrVXluQjRoM3lOWG1Ld3plNDgxQTBhUG1pb1J0dTdiUXNRTXdKbTNCOXl6Q3E2OW8yeFN0ZmJfYldlU1JaNXdsWjdlb215UDl5X1ByWFhsZDM0ZGo4eTNZSG56Z3JyNUo4ekk5cWtjSEdxeG9mWjZCWEE0YmJ2TFpGMFFhS2pxWkJUV1ZVVU4xXzNtcTRaZWNFc2JnYjItZkdPYzJEd3dDdjVhR1E5Qk13Z084V0xtdUVuY05WUk90a0xraXBVODNqdE41bmh5NUU?oc=5"
+    },
+    {
+      "title": "Introduction en Bourse : Laprophan mise sur les acquisitions et l’expansion internationale - Finances News Hebdo",
+      "date": "2026-10-29",
+      "source": "Finances News Hebdo",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOUUdZU0QtdXNEQzh0eU1wbG1KWGZPVmp1MWtoYlZ1NGZielpHUWJ2NW1XYVd0am9aY3NMZVFlWDFZcDMtUERCVHRMVTRUR25hN3djaHBMTzRyRmNrM3lmUUZXWkNwaHd2ZW1JV2ZPZk50a3J4TEF1Wmt5YTV2bEtrNE5rVkhHaW5RZzlOUnU1aG1vODBC?oc=5"
+    },
+    {
+      "title": "Feu vert de l'AMMC pour l'introduction en Bourse de LAPROPHAN - Boursenews.ma",
+      "date": "2026-10-28",
+      "source": "Boursenews.ma",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1QNDRsVUs5QkhOTTBtd3ZjSW1hZnBhQU9XYS1HWlpPWElGX1o1YU1OQV9QeWt5Y01hRURTYkJ3RWE3ZVo5MURLTGJTYVZiM0hjNlU3R1RILUxUa0QzYkM4aXh6R1pKMEVtQVlFMUphZG1RdEU?oc=5"
+    },
+    {
+      "title": "Laprophan : Visa de l’AMMC pour l’introduction en Bourse - L'Economiste",
+      "date": "2026-10-28",
+      "source": "L'Economiste",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZUJhdzNNcnlXX3VYS1A0TXl4SFNUVS1oOGctd2V1WUFYSXhYMnI5VkplZlF0S21objBmVmY2Vm9iMUdKcjVDUVpzRHZPelBsUDBpY3dyTkkxSFhMQlRFb1dVRGdITng0RHB2d1lidjNwOXpYaXNZUnM4WE1FTWNqNkpsQml3WmZ5aVdjb2d1MEQ2T3F0OVpqSw?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : Laprophan obtient le visa de l’AMMC pour une IPO de 2,22 milliards de DH - Le Matin.ma",
+      "date": "2026-10-28",
+      "source": "Le Matin.ma",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcmg4Yy1RLXl0dURtenZXdnZQNHRZdGlGYlRVZEdydkxCaXRwS2YtcjZwbjNKNUd0LVQtV0dRMXFCbWZCNVVjbHBDMzRNMDktUVY1cnE1YzduckE1MkV6R3lpMUFULU5PZ0dHR3dYTTJhU0trclBrSmNLNkxJTTJhczR2c2IxS1VPSHg0X3Zuc01yakJPMGRramdVSXBSNVc0VEtB0gGoAUFVX3lxTE80d2JaWmxTYXFwWWtsMUJoTmlhUmJ2VDlPck43MzRpMDBLQ3VZbG1qWU9FVnRTaExPR3ZzS25JeHBXMFpGMlpBbW9qOHRUeDVDTmZNVTZYbjV0MTdYanEyZTJ0NGoxSlZOQ3pCNWZKWXJReHE0NW5oZFJqLTV5SE5jTVo0OFNNZ3NsR0s5M1lOUlZKUzhkNW9vRzZHcUpBRGZXRHdDUDlTMw?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca: l’AMMC valide l’IPO de Laprophan à 2,22 MMDH - H24info",
+      "date": "2026-10-28",
+      "source": "H24info",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNU0JOdFFYMjBSZzVjWFlQSnI2bXN3WTZlZ1lsN3Q0U2tQNlZucVZaTDRndzlIU3Ryb2FnYWNCdnFUdGVkWFpGZndCYUVST3hiR2tJZVpPcEQtUy1iV21GU0lobll5Rm95TlB5MzhOcTJjSTZjYnYxR0UyNmEzZGxnNjVYZkg5MzJyZ29QWk9xazhhWWtnWnc?oc=5"
+    },
+    {
+      "title": "Laprophan obtient le visa de l’AMMC pour son introduction à la Bourse de Casablanca - LeSiteinfo.com",
+      "date": "2026-10-28",
+      "source": "LeSiteinfo.com",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNQ0VzTzJnLVBSeVNRVjZwb19kZkpZRVFIZ2N1N2hZWUU5TjZlV2FCRnJFUGxCTDZfQzVJRmRGc2xSRU95TUg5NGE3WU5sYUlGamcybGpuMWFzZDRZQUVRakRaRllsblFxMDJLdHh1Ujgtcjc4MEJNVi1WdHUzYk5qczUxOEloLWJmSlVPb0I0a0dZcTgxZTktVzJNNFExTDFjMDczQmZtM1ZzYVF1V0Q1eG9raWNGNHZaeWF0eS1FVk9QaC0xbmc?oc=5"
+    },
+    {
       "title": "LAPROPHAN — AMMC approves IPO prospectus",
       "date": "2026-10-28",
       "source": "AMMC",
@@ -28,11 +98,242 @@
       "url": "https://www.ammc.ma/fr/node/55955"
     },
     {
+      "title": "Bourse de Casablanca : les bénéfices attendus en hausse, les valorisations en repli à l’horizon 2027 | L'observateur - L'observateur",
+      "date": "2026-10-27",
+      "source": "L'observateur",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPaldleFhaekg1dmo5VzBHS2RMQWgyMXhhUnR3LTB2V1dXYjMwdkRDdHhCRmxSWmgyTDE2RC0wWTVyaUh5U1BuR092elI4TzZSaWlzTEdwT0QzNllOUWxaaHl5UDMyNzNuRDNqdlBQa2RmblljTXp0am5ucjBkZG9UelEwMlVUTkJZQ2hGcHM5QkE2dEtObDFOTHdYT1I3ZXVqeUNvQlFGbTl2ckxjMGVrRVp5TXBYLXVqcVY2djN0NXFfZUZPbnFMX0U5TVVENXV0SnhRZGJPWkpjUHJSWHR30gFWQVVfeXFMT0E0TDQ3TWpMZW5YN0RmZ1lOcXhQYks3cDJMa0dWMFVfbmEtRWtILVBCRTNIT2t1eUZ5YnJXVWRwOTAxYVhxZ205QVJLTzdhWmNTODE2VVE?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : BMCE Capital anticipe un marché attractif en 2027 - Le Matin.ma",
+      "date": "2026-10-27",
+      "source": "Le Matin.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQMWRqUW1RVmFnazdsWnFHbXo2VEdzb2stMlBKbmk4eVZ2SGVRb3VNdWZfX0t4NWZTR2prQURFUXdicU84NGtjVFNMMGtBTUttWXJxT1hiWHh6YVo1TnliVjBETzNSdHpCcnIyUUF4N2ZPM1JCdFNDMFg3WTYwU0VDR2ctOHBnWE5WeHRKdjNZUmdBZFJla0wzUW9pY3dCRWI4N1dMc0l5UTI?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : BKGR prévoit une hausse de 11,4 % des bénéfices des sociétés cotées en 2026 - La Nouvelle Tribune",
+      "date": "2026-10-23",
+      "source": "La Nouvelle Tribune",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMlR4WHhkaG1aNUlFbG5JWWpqS0xuZHZoN3VKYXpYUGYtNlVSZEFyOHJVeHEzQi1LelpGZ3JvLXVPNDJCNnJvWGpjZkhEeGIwaE9mUTJKdm1jNjRGSk96cUIxZEFyYzZlNFFGczJ5T18wY0FLZ2xLcEpDanA3WjlfNDUwZVRIcXQ1TXZNbFhmWTdSYmpXalJNTGZxNnhHdWViZll1RUpzQlhhdWN0LVE?oc=5"
+    },
+    {
+      "title": "IPO de Jet Energy : jusqu’à 375,4 MDH à lever, les souscriptions du 2 au 5 novembre - Medias24",
+      "date": "2026-10-22",
+      "source": "Medias24",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQ1R6Qk8tS1BSb2RwNC0yRFowTVpwbDRFcGZUb2lMbmxJekFKZVZaTm4tX0p3dk5rRU9rV2YxNVhwT2tVUVh5NDlzUVRtM2E2OWZDbjYzN0lvUjJaYloyWFM4UDZkRVFxbVhfZ2dVWUF1Z3RJaDkwbDVBUTkyMk04LVNsRlFwZTRaLTNEa0wxRExpYUpkNHptRFQwbUtsOVNCcmhWcTcySm1adENEOUN3cEFmUjhXMklWVk44?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca: Jet Energy prépare son IPO - LesEco.ma",
+      "date": "2026-10-22",
+      "source": "LesEco.ma",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNUdKLUtwTnZfd0dTT29HSUFYVy1paWlxWk42aHpIMWxnYWpxVnVlaFVWVnN2TTExS0I3NGprOFdfZGRHTjZiNGtHMlBCTHMzcG9XcnRqYmtudF9FUFhiUzB1UzRtZTROSTdGR1VFX1QxQnNsS0Uxb3VJYkVrOHdkRU5sTXJHQQ?oc=5"
+    },
+    {
+      "title": "JET ENERGY obtient le visa de l’AMMC pour son IPO - EcoActu.ma",
+      "date": "2026-10-22",
+      "source": "EcoActu.ma",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE55RmJQMTlzSVI0QUxuYUtNTWJvZ3JhNTVFanM1SXZxVnJybml5UE0xV1RKcW9rVEM4S0s0ektJQlpmMkx4QmpoTEdTOGpqa0JiSVdWQktram1yTEhXZEpBVXl0d1JBOWlDa2ZNb2c0eTgwbkYxSWVv?oc=5"
+    },
+    {
+      "title": "Jet Energy: feu vert de l’AMMC pour une IPO à partir de 125 DH l’action - H24info",
+      "date": "2026-10-22",
+      "source": "H24info",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObXoxczc4WEFzUVRpR29SRmNYRjVPeHJtb3NxRm80WUVtSEN0NG5CODJ0MW5Jd0t2YWxzZ1VHVUkzMEc4SnlwemNkRWREZHZveTZNZFp0YzhVQ3FPR2VxLTRXNzBEbl9hUV8xRmw0bnctcDVoUmdmS21XekFia3NIVnVaUGw1QmtIeUtFZ2tQUE90dmZ1ZGozbDhfbmVWZw?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : feu vert à l’IPO de JET ENERGY - La Nouvelle Tribune",
+      "date": "2026-10-22",
+      "source": "La Nouvelle Tribune",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE92cFF4QVdGMG95cXNwWkQzYXpMeDBLMWNjX29YLVV1dzRyRHR6MHFwMDJZeHpPSWxDdVBMYWh0LXdEcDlKN2xNVk5FRDlmUjh6LTE4ZU1kdGx3aFhRRGhSMVFaOWRaRE1PcEtUa3B3TFRaNjB3?oc=5"
+    },
+    {
+      "title": "Pourquoi la Bourse de Casablanca a perdu 12% malgré la hausse des bénéfices des sociétés cotées ? - Le Matin.ma",
+      "date": "2026-10-21",
+      "source": "Le Matin.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZ3FBVVVySFNpak1sTlJvWmVTQ0hMc2o5a0ZkZVJnSVlZOXJjWWtpSDc1bmF6TDZjaXFBX2ZFUUdpN3lCeFhDUDNjbFhrTG9MZFF1ME5pNWZDNmtNYmZuRDA2MGlfME9EVURNbnBIaERmUHBOMFFESUxEM1k1bXpRR1dBTzDSAYoBQVVfeXFMT2o4QTIwMXNtNExGdUFBU1pTZm50OTY1RG84R3VhR1NHaTFXVVZEY1BXaUlPa0lIVERuVGFnaGVOSHdkMzBBenVRZ1BGdUlQVzVXT2dHel9zQTBJRFRGZGNnYlpSbWZzX1VoYzdEVGU2Zkx1WVJtSGRKZ2NmcjVlVnlsdTBGcWtuX3hn?oc=5"
+    },
+    {
       "title": "JET ENERGY — AMMC approves IPO prospectus",
       "date": "2026-10-21",
       "source": "AMMC",
       "category": "ipo",
       "url": "https://www.ammc.ma/fr/espace-emetteurs/liste-operations-financieres"
+    },
+    {
+      "title": "Ce que pense CFG Bank des dernières sociétés cotées à la Bourse de Casablanca - Le Matin.ma",
+      "date": "2026-10-08",
+      "source": "Le Matin.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOd3JtcTFDZVZ2Q2tTVkMxV2xHNUdZQm9SWkNlNG4yOU5ybk1OZXFlSTlHNEVMc1Q2WUNUVHdmTGlvc1lSU2IycFp2WEtDR1hVQ0hnRVV3eW5FNFZCaXA0c1RZckxOc2Y0WnROUE5jS2VxSnNFM0FaWGJwd0hqTU5lekh3LUdIX0Izb1dIVkJ0UzVYdDF3dXJMSy1ydWRGZ9IBowFBVV95cUxOdlg3TlEtWTZCZ09YWXJNdVpNcm9jbkIwMzNYdnk2akVpSG50Y0VjdDM0UVcyVUMwcVF1ckV3MFdFVWNqWnhSdEpsd0h0d2sxSVk1NlYycWZUa2RKcE16S2Z0bEVNS21mWGJKbldnUklBbXNPNGI3LU5EbWdySUpMNWZwaG55VFYwYlFCN19XUTBKVVBUdng2TXhrSlpPakpncGpJ?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : hausse de 12,9% des bénéfices au 1er semestre, tirés par les minières - Telquel.ma",
+      "date": "2026-10-02",
+      "source": "Telquel.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQUmVNaFIyUllmelRLYjJwRHVfSmR0QmRNZjhtZGtsaU5ael9LRUd6U2N5ay10UGxaVHRDNFFsbTNYZktDeXNFUENxUjUtVGFLQ0tzWGx3clVHdGNnVUsxNHB0d0RtSXVDMWdUbVNKcnN1RlF5ajVEcUNwNXk3Uk1QRTd6YklmTGV4M1p5V21CdUNrZEhUZkZwclk3TW5uYmZ0b21EUTBCOW1XdDNZcGVqblNsSFJlczRfQ05odDB1X2phYldYVzFFb0RLbUdCbnR4dWo3am1Ud0VFeXc?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : les bénéfices des sociétés cotées progressent de 12,9% au S1 2026 - Infomédiaire",
+      "date": "2026-10-02",
+      "source": "Infomédiaire",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOV18zWWVxbC1YMndMd1R3UTJybko1MUF5ZUpiWDdHb09IUFFBeVQ2cWRmdG5ZTDJVZWVLeld4T1N3Z0xxODhQZWdCR1RGbVZfTHdOMVVvM2lhb0JRVGZqSEpNbnNSUHg1SVcwTGxDWVNwYmZXZ3FRdlp5djJoeVBRQnBQdm5Xcnk3?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca: portés par Managem, les gains des sociétés cotées grimpent à 29,4 MMDH au S1 - H24info",
+      "date": "2026-10-02",
+      "source": "H24info",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1VaWx3YUY1UktVTE44UXFjN3dvVTAwVGhvRGt1VmNpMTdLbmZfeUdQNWpRclN1QlFWSTFKUUFMdEZoNkVaX3Mxc25FR3g4eTZqakRuUzBRLVhBSE1GaXo0LVpldEl5T2RLazlTMnFoeGdxWGV5Zko2N2NHSQ?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca. Les bénéfices des sociétés cotées progressent de 7,4% au premier semestre | L'observateur - L'observateur",
+      "date": "2026-10-02",
+      "source": "L'observateur",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOREtBZm5wSno3ZnVaX0dRV2hCRk9nY3RtZG1lSkxuYlJNVmVDWkVfRmpGZkIxb00tUEtwcHVwOTJ6UG1iRzFkTG96bnVnUEliU0c3RnBzM09tYXlhUXJlZ2F1RUpTUE44enIyVi1wZms1RGdoek9vaVQ5WVpXS0Zaa2RtVzZDWWdES2FHaGY3WERtTTUyVXd5Ujd6eU1IcllNNUZRV3NDRkp2UWVReWxycFFQTGhmekRPQ3Bta2VUQkpGU1dmYTNrM25DbUZLN2x6QU9XQjc5bk5Dd9IBVkFVX3lxTE9pODRvaTgzUGliaURXQjhWTzA3NVFJdlhsNWVNVmxvTk9DZ1p2WnN5dGlCcWI4SzhNMF9KRVF0Q0R0aTllV2JWRnlnMWllbk5tU2pRWi13?oc=5"
+    },
+    {
+      "title": "Sociétés cotées : les bénéfices progressent de 7,4% au premier semestre 2026 - Le Matin.ma",
+      "date": "2026-10-02",
+      "source": "Le Matin.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPOWV2aGJaVktVb3lkc1pOM0R0bGtqMVhIV21nYzQ3X2VZSU5NbTItbkxMWEo4dXl5d0N6ZnZIajJLczVtQXhTNXczc1lwMWQxMXBjWjREM1ZFb3RaRWVhQS1QU0Y5MFVZamtiT25NSi11djZlU0dzNnBfVVdxZlp3UGRPOVNDY1FSTTRlUm5DLWxhUk00Yml5cElrU3ZqbnlrM2wwbU5HNXhTWVnSAbABQVVfeXFMTmt5cXBjenM3WXp6eV93enpBOTVIWDNJcHgyMVdDMzFIS3lnSV9HMWdWMkVKdFRVbE5wTU43OUQ5dTlQN3k4OUloMU8yQlQ1bUVwRXhITnY5cWRzV3NqMTB6NElydmlkVHdDMmpsdDBpNUZwTVVwTWpaemhBTlp3N1Q3TDNHeklDQllQN3poR1FQb1RGS2lHMHlKZnpQZ2hULXItbjhXUWUwVjhHT2dQZTQ?oc=5"
+    },
+    {
+      "title": "Sociétés cotées: la masse bénéficiaire atteint 29,4 milliards de dirhams au 1er semestre (M.S.IN) - Boursenews.ma",
+      "date": "2026-10-02",
+      "source": "Boursenews.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxONFZtTnpoOFpqV29ZSFZ4U2JzTEhQR0llM2Z4Skl0MlVZcWtvZ0JPYUx5a1hIRFRPVnR1clVINlFTZlE4cTJFTWQtNHVzODNXTXV6NFNWNzZwSnQ0Wkd0aDh3d25qYW5nNHdOQXNHVWRfWTNlSDhHdkJqUndsbXJjYlFtbDl6NURfYjYyNkVZRFcwTlhDVUxBTzhXMGpoQQ?oc=5"
+    },
+    {
+      "title": "Sociétés cotées : les mines, principal moteur de la croissance des revenus au premier semestre 2026 - Medias24",
+      "date": "2026-09-09",
+      "source": "Medias24",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOb3BXZTFEYVczQUZ5ZDJBNTFOT29ud2M1dkZEVHNSaTJDOXh6U3JlZm9pQ2R1MlVfWUsxRloteGpKV1FuVy1xWlAwYjlrdklXanFJUVpjSFZlYnEySnVZSk9FcnhoaU5oSzFocmVMVFBzSHFvamZFWTVRTFlQRjhVNlB0NF9QX05KVWlXbkd0WmdzOEw4VTQwdEZTTnpZTVBLNFlQU0hYZDcwNEJzT080TlNxd1dUaTU2NFdZc2VOaks5ZFU0MmJaMGxiUmhGWWQyNVpJ?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : l’activité des sociétés cotées progresse de 11% au premier semestre 2026 - Infomédiaire",
+      "date": "2026-09-08",
+      "source": "Infomédiaire",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQU25pSGJvaE5Ta2VDeWJBWGNPRWRIUktFYllZQ3d4Qm5yZFpRYWhkdFdRTDZNZ3Y0SE5qd1lhbWtnZ1NQVFoxZWloc2FZVEw0Q3dPSHZmWFAzdDNQNVVvckNzWGdWLTFiYkotaGxoUjY0cmw4TjFnYl9sdjhaZHB4ZElRX2hmUVk?oc=5"
+    },
+    {
+      "title": "Sociétés cotées : Le chiffre d’affaires en hausse de 11% au premier semestre - La Vie éco",
+      "date": "2026-09-04",
+      "source": "La Vie éco",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNTzJwTTl0M2xVWnZ5NGd1cUZUc3dtOGhfNTVLWmprSWNBS3NIWUF5S05ScFZSLXVnQUI2MlM1VUVTY2ZlS1gzdWZXRW1ycGtkTFFYZE9kRzZWRU14QzQtWGNtMUpoZGw0VHl5QURVNnNPdVlRSjdwbHlCeGdxbW83bkx4ZVVNM29UMWhVT01PY2UyQTJoQV9vYnNOR2tZek9iblN2elZZTVk?oc=5"
+    },
+    {
+      "title": "Sociétés cotées : chiffre d’affaires en hausse de 10,8% au premier semestre 2026 - Le Matin.ma",
+      "date": "2026-09-01",
+      "source": "Le Matin.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOOGtDNkZ4V0VnZFk5ejYwck9jTGk1QXBFcW8zY2lWOEp3MmVaX05NZEY3ZTNCNUVpeEtzdHduZjRmVi00aUlFRDAwdGprRU9tQm9YVjZucWZPMjlDZ2JZcmpBVG4xQWZQZmRQZXBGSjl0bkpVQkFEVTVJT0pCZE9JbkhNMGRYVkpLQ0pxdmtkb0lBYVd3ZUcxWktuUnPSAaIBQVVfeXFMUE1kTFpxUDdjTDVXOWExNUpkZVR5Y3IxU1l0NUJwV2tCUU5VOENJYWZMRU5VWURDRlBqTi04MUhhY1h5eW01SHlKMjUzdWVSYzlXMHNkWWZXcXlMRXVubHpIU2NFenZVNlIyNExUa2NtODd2UmdNTm41WWNwaGx1SXE3XzRWM3NKYjJ0UGJwUTdNb20yb3QtUElhYjJsV2tqQVZ3?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca: La cote avance à plusieurs vitesses au premier semestre - Boursenews.ma",
+      "date": "2026-09-01",
+      "source": "Boursenews.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdmV4LUFtX2FIeXMwRUowdGRuZzJvdUxYMTR5Y1BINXFtWWlWYmQtVzh3eDRTRVVkdkZKYVVZNi02SHhuOFk4RlZGQmJJdmNNcFZNaDdfdF9mSEdROFpvRk5lZGZLRlM4aS1fU0VucmNIMDBNekp2VkdYYkNfcnRfa1VwMnVLOXpxd2JPVGpuVWw1a3R0LVhWWnYxSy14cHZPTWJJ?oc=5"
+    },
+    {
+      "title": "T2S obtient le visa de l’AMMC pour une IPO de 1,1 MMDH - Le Desk",
+      "date": "2026-07-06",
+      "source": "Le Desk",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNMzVsbVl4WkI1bXZQWmN5cHhQZXJpN3dORXBpd1pTRnk0RTZvODE4ejEzSzdzS04zUmdEX21vMzFFOEFGLXlaalFCSEhpeGI0ZFFTMkZqMmpIUzU0dTBrWllzeklLSm1hTHZUMEZYZG9SZVI2MUNHVUdfOC1DUVgzTXExQW1aSU0xT3c?oc=5"
+    },
+    {
+      "title": "T2S Group Holding lance une IPO de 1,1 milliard de DH sur le marché boursier - Le360",
+      "date": "2026-07-06",
+      "source": "Le360",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZmVrMXE4aUVQMkt2SVVGaFo2Y0JSWHVhZlhLR0dtWHpkeExkYXRPbWdmVW44U0w4QmZ5ZnN5TU1vYlhDNnoyM21sSTJKbVZERkVpdGNyX251aW4tM0lCaS1QNjN2bmpfeHVsQ3ZaV3VVZVpuWEFfQmUza2plTXhNekNUc2xFSVRObHlhRkVkY0otb0J3UW9tVVYyZ2FtRnVUbHhCamRRYlg2cjc2N2s0TExwMVhMelF3T2tiQ29xazlrMXJhSE45T1NmQ1I?oc=5"
+    },
+    {
+      "title": "T2S Group Holding décroche le visa de l’AMMC pour son entrée en Bourse - Telquel.ma",
+      "date": "2026-07-06",
+      "source": "Telquel.ma",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPWnhsem5lLWdZOHZNYzRCbE9fUkswdmF1MjRMYmU0d0tiWDgyRVJhYTdyeU9FMHZzdkNrNG9JXzdEMWdTZGVEVEppSmhaSTZDVjczTDNzdzlvNHFiQjdiMlBuR0hHMHAzUEdQeVFaVGpjMjZJSHZnRHJWdElDWGJXNnRPYWJVTkhQbV91U0JYWlRrODl3cmVfOVRfS2lXQXVkNk9JeWVQMm9PejVueGtGWE9LMTdSYXlXUTdYazRYdjctUmc?oc=5"
+    },
+    {
+      "title": "T2S Group Holding obtient le visa de l’AMMC pour une IPO de 1,1 MMDH - Medias24",
+      "date": "2026-07-06",
+      "source": "Medias24",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaGJZcXpjRDRiaExJYzRYeWFmQms1SEUzaEJxQ1RyMW4zWmFMY2I0MjBFMFVxdHctcFdZamtMNVBoWkhROURqUFNVb1lWUXg1Q0RvV2ZTb2VPMWNNMjRBQUcxeUpkM3FWWlZEWXZrODQ2X1h2WUZmTG5lT19ySHpxOWJnVExnLV9yazg2dXYyQ3E0amZvNmhzcEo1clFUZkwyTVllNkluWGFYOW8?oc=5"
+    },
+    {
+      "title": "T2S Group Holding obtient le visa de l’AMMC pour son IPO - Le Nouvelliste Maroc",
+      "date": "2026-07-06",
+      "source": "Le Nouvelliste Maroc",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZzhMNFBzNF80T0YwdXgyWE55cGpyV0tiYkxKUFRnN0JXWV9LSXYxeFdSbWpKQktRTl9aMnpfdHRyLWVpQnN1eTJiSjZOOTF4c3dHQVZMMXNtZHNvWW1qLUdzNjZFVmo3TFZ0QUlRcHFZUGwtcG8yRHUtc05VN0RTNDlOQWpHNzVEZmhVQlF3?oc=5"
+    },
+    {
+      "title": "T2S Group Holding obtient le visa de l’AMMC pour son introduction en Bourse - EcoActu.ma",
+      "date": "2026-07-06",
+      "source": "EcoActu.ma",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBlZmhXcWFkcm1VeW9DUWdUcjEzYXl6WlhJY0Ewa0FNbUNEeEVvRy1uZnZLbU0zaU9zdjVKMFNHa1ZKcU8yNFVocjFIbE5RSGN3RDE3OGJ0b2NzRldKc19ndkNhNGJETjBQZnpwS0wzOA?oc=5"
+    },
+    {
+      "title": "T2S Group Holding : L’AMMC vise le prospectus d’introduction en Bourse - Boursenews.ma",
+      "date": "2026-07-06",
+      "source": "Boursenews.ma",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOMURMOHdGYlJ4SjhVU3d6MktfNGhVNHdCWHV1U3ZmdHF4aUE3Qm1FSGJ6aGloNjU1OVlPNl8yTVBjOHVCMm1MRWdkUlBpZUJSSG1UUFN4WGxQNE1iSlJfNXd6M1J6YlgwaENGNTVCcEFBdkxfUExramtGTmFOZFJXM2gxQ2VabFdFMFp4NkpPSHZMZ1JzZ0x5SmFVbGlLUy1yRjc5d21tVm0?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca : Ce que pensent les analystes de la correction, de HPS et des valeurs minières - Le Matin.ma",
+      "date": "2026-07-03",
+      "source": "Le Matin.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOb0QzM0kwTlRkVnNXcEY1WWl4REZJV0pYYllFLUVacEE3N1huaVcwbWp1YzhYVEV3SVpVbVFxbG5FUXpHbjJBOWVmZmdjTkZpdm9tb2U4M0lyaUlqOVR0OG81VmRYUW1WaVJfQ0Rfd1BQQy02a29EaldkSXVndWFSdHdfM2duWjZZNWhnYU5hVmgyMGdIZEZldENoUVVMYmlWZm0w0gGoAUFVX3lxTE92b1VxNGthWXRsdFlDaHY4X243TTc4UlZaRm9kQU9YNlNZdDZoWm1uSC0xWmJYcEpLenZrZUx6eWh3V1E2c2lUdkFtY2ZWdWxMaU9GZUlBWkdoMEZENHVjNy11am83Sm1mOUZ5Z0ZLVkVaWkJKVlJncF9yU2N4M0gwYmJuVGJSN2w5WC1vUXNnaGRtN2Z2RklPVXdXVmotQ2hiU2FFOFV4Sg?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca: plus de données, mais les petits porteurs les comprennent-ils vraiment ? - Le Matin.ma",
+      "date": "2026-07-01",
+      "source": "Le Matin.ma",
+      "category": "company",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbjBXY1JCakQ4ZEZZOGxTQXF0djhvWUVTRWdlNVIwRGNOMGpsM3pRNEU3UExPNW1tZTc2TVhDQU15dUJXUTlNbm51SV81UVdIVFowRm5qUHJQQXRYT3V1SkV3V1ZkM0Yta3g5cGg1Z0xpamNaeFpXN2cyRzIzUGphS3pSSjJwQXdURE9SeTFSdFVDSy1yeGsxWHAxclpBeVdv0gGmAUFVX3lxTFBqOUZkODdxNFdtRk9NVEpoMVJ5Wkc4ZzFsd3hpa1pSUkNab1JYemkwQlZuN0dOWUxnTnVWVTNXR1R4SjNtVlp5ZUswenFvSWxOQkpUTnRCMzNiSzdUbzFQLTJxclFxSVZGbjIwOEVMcjFXbW1ZQkpESW1lWWJ2S04yU0NXLThWRkZIVjNWeGVOT2c2ckxacUxpRHlkS3l6bEttMWFXcmc?oc=5"
+    },
+    {
+      "title": "Introductions en Bourse: l’AMMC élargit à 20% le seuil de variation des nouveaux titres cotés - Boursenews.ma",
+      "date": "2026-06-25",
+      "source": "Boursenews.ma",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNT2dDZ0Y1N3I4aXlsX3lEOEQ0MHZ6b1hVczM2cEVFQmY4bzNYMmc2ck9razV5UTNLWnAtTXJ2Vl9xMXlWSjRtd29IeTJ5NkVvRFhYbFo1aEZtR3E0VG9lS281aTdMaGNzMDl1dWIycXk0aVNmU0hHS1JtMzc2TVdzdHhfaGtHekRkbUNSdnhVc013VmxCZ3lodmNtX1Fsb0xXYkE?oc=5"
+    },
+    {
+      "title": "L’AMMC porte à 20 % la variation des nouvelles IPO pour les 5 premières séances - Le Desk",
+      "date": "2026-06-25",
+      "source": "Le Desk",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOb0ZTaGRCU3NHa3Q5R0w2U08wZVRCQk85b0cweDV2bXR1SnBiZG54VUNiOVVuLThpcTdTTDA3akw4anl5YkF5UTdFTG1icW1CRWNLY29BTlY1czJrWEZvYmJPNHVHeUduaDk1cjU5cmR3R3B4dEE2MzgxOWEzd2ZpandDVnN1UWFycDRSLXdjNXVGVEtkejFRX2ZjS0hsOG1aRHE3OUF2T20?oc=5"
+    },
+    {
+      "title": "Bourse de Casablanca: l’AMMC assouplit les règles encadrant les IPO - H24info",
+      "date": "2026-06-25",
+      "source": "H24info",
+      "category": "ipo",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNamdRQVJkVWpTZDlzRk5nWkFZa0pQRkQ2VjNmM0l5Ti1zSFJyYVk1RzZ5WlhkVmZNa3lDQmk4R2swNXh4c3IxLXo4RlpOZTBKNHZIemx4dTJrY2hDaHY0bC1uRXI5YmFNUTlvRF9rVDV0dXFmS0NVdTdEd241bmtnOUI5SWVCZEU2WENPSFJ0dkE2WEJ5aGwtZ0pB?oc=5"
     }
   ]
 }
