@@ -6,7 +6,7 @@ Private personal salary and investment-planning web app, with a Casablanca equit
 
 The website source files are in the repository root; no build step is required. GitHub Pages requires a public repository on GitHub Free, or a qualifying paid plan for private repositories. Publishing the site makes its JavaScript, published market data, and news publicly accessible. Never commit actual salary records or private financial files.
 
-For eligible GitHub Pages repos: Settings → Pages → Deploy from a branch → main → /(root). The resulting public address follows `https://<username>.github.io/<repository>/`. On an iPhone use Safari → Share → Add to Home Screen.
+For eligible GitHub Pages repos: Settings → Pages → Build and deployment → GitHub Actions (NOT Deploy from a branch). The included workflow deploys the website on pushes and after scheduled public-source refreshes. The resulting public address follows `https://<username>.github.io/<repository>/`. On an iPhone use Safari → Share → Add to Home Screen.
 
 ## Updating quotes and news
 
