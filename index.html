@@ -240,8 +240,33 @@ html[dir="rtl"] .catHeadV7,html[dir="rtl"] .catFootV7{direction:rtl}
       function renderTransactions(){const arr=allTransactions();$('transactions').innerHTML=arr.length?arr.map(item).join(''):'<p class="muted">No expenses yet. Tap + Add expense to start.</p>';$('recentTransactions').innerHTML=arr.length?arr.slice(0,3).map(item).join(''):'<p class="muted">Your purchases will appear here as you add them.</p>';document.querySelectorAll('[data-delete]').forEach(b=>b.addEventListener('click',()=>{if(confirm('Delete this expense?')){data().expenses=data().expenses.filter(e=>e.id!==b.dataset.delete);render()}}));document.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click',()=>openDialog(null,b.dataset.edit)))}
       function renderInvest(){const inv=data().invest;for(const k of ['stock','gold','bonds','bitcoin'])$('i-'+k).value=inv[k]||0;$('investmentProgress').textContent=money(invested())+' / €100';let pct=100*invested()/100;$('investBar').style.width=Math.min(100,pct)+'%';$('investBar').classList.toggle('over',pct>100)}
       function renderGoals(){$('goalsList').innerHTML=state.goals.map(g=>{const p=g.target?100*num(g.saved)/num(g.target):0;return `<div class="goal"><div class="row"><h3>${safe(g.name)}</h3><strong>${Math.round(p)}%</strong></div><div class="bar"><div class="fill" style="width:${Math.min(100,p)}%"></div></div><div class="two"><div class="field"><label>Currently saved €</label><input type="number" min="0" step="0.01" inputmode="decimal" data-goal-saved="${safe(g.id)}" value="${num(g.saved)}"></div><div class="field"><label>Target €</label><input type="number" min="0" step="0.01" inputmode="decimal" data-goal-target="${safe(g.id)}" value="${num(g.target)}"></div></div></div>`}).join('');for(const f of ['saved','target'])document.querySelectorAll(`[data-goal-${f}]`).forEach(el=>el.addEventListener('change',()=>{const g=state.goals.find(x=>x.id===el.dataset['goal'+f[0].toUpperCase()+f.slice(1)]);if(g){g[f]=num(el.value);render()}}))}
-      function openDialog(){$('expenseCategory').innerHTML=state.categories.filter(c=>c.id!=='investments').map(c=>`<option value="${safe(c.id)}">${safe(c.name)}</option>`).join('');$('expenseDate').value=`${mk()}-${String(Math.min(today.getDate(),new Date(month.getFullYear(),month.getMonth()+1,0).getDate())).padStart(2,'0')}`;$('expenseTitle').value='';$('expenseAmount').value='';$('formError').textContent='';$('expenseDialog').classList.add('open');$('expenseTitle').focus()}
-      function closeDialog(){$('expenseDialog').classList.remove('open')}
+      let editingExpenseId=null;
+      function openDialog(categoryId=null,expenseId=null){
+        const choices=state.categories.filter(c=>c.id!=='investments');
+        $('expenseCategory').innerHTML=choices.map(c=>'<option value="'+safe(c.id)+'">'+safe(c.name)+'</option>').join('');
+        const maxDay=new Date(month.getFullYear(),month.getMonth()+1,0).getDate();
+        $('expenseDate').value=mk()+'-'+String(Math.min(today.getDate(),maxDay)).padStart(2,'0');
+        $('expenseTitle').value='';$('expenseAmount').value='';$('formError').textContent='';
+        editingExpenseId=null;$('dialogTitle').textContent='Add expense';$('saveExpense').textContent='Save expense';
+        const edit=typeof expenseId==='string'?data().expenses.find(e=>e.id===expenseId):null;
+        if(edit){
+          editingExpenseId=edit.id;
+          $('expenseTitle').value=edit.title;$('expenseAmount').value=edit.amount;
+          $('expenseDate').value=edit.date;$('expenseCategory').value=edit.category;
+          $('dialogTitle').textContent='Edit expense';$('saveExpense').textContent='Update expense';
+        }else if(typeof categoryId==='string'&&choices.some(c=>c.id===categoryId)){
+          $('expenseCategory').value=categoryId;
+          const titles={housing:'Rent',groceries:'Groceries',transport:'Transport',bills:'Bills',savings:'Savings transfer',leisure:'Leisure',other:'Other'};
+          const cat=choices.find(c=>c.id===categoryId);
+          $('expenseTitle').value=titles[categoryId]||cat.name.replace(/^[^A-Za-z\u00c0-\u024f\u0600-\u06ff]+/,'').trim();
+        }
+        $('expenseDialog').classList.add('open');
+        (edit||typeof categoryId==='string' ? $('expenseAmount') : $('expenseTitle')).focus();
+      }
+      function closeDialog(){
+        $('expenseDialog').classList.remove('open');
+        editingExpenseId=null;
+      }
       $('menuTrigger').addEventListener('click',()=>$('sideDrawer').classList.contains('open')?closeMenu(true):openMenu());
       $('drawerClose').addEventListener('click',()=>closeMenu(true));$('menuBackdrop').addEventListener('click',()=>closeMenu(true));
       document.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.nav)));
