@@ -57,6 +57,30 @@
     @media(prefers-reduced-motion:reduce){.sideDrawer,.menuBackdrop,.section,.menuTrigger{transition:none;animation:none}}
     
 .languageSelect{width:auto;min-width:62px;max-width:90px;padding:9px 6px;background:#152238;color:var(--text);border:1px solid var(--border);border-radius:11px;cursor:pointer}.quickSync{white-space:nowrap;transition:transform .2s,opacity .2s}.quickSync:active,.primary:active{transform:scale(.97)}.quickSync.syncing{opacity:.5;pointer-events:none}.kdpMetrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}.kdpMetrics .marketChip{min-width:0}.kdpMetrics b{font-size:clamp(13px,2.8vw,20px);overflow-wrap:anywhere}.kdpHero{background:linear-gradient(125deg,#16463e,#174256 70%,#1d3556)}.kdpHolding{padding:15px;border:1px solid var(--border);border-radius:14px;background:#14243a;margin-top:10px}.kdpDetails{color:var(--dim);font-size:13px;margin-top:7px}.kdpBalanceNegative{color:var(--red)!important}.syncToast{position:fixed;bottom:86px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:120;background:#163a35;border:1px solid #399a7b;color:#effff7;padding:12px 16px;border-radius:14px;box-shadow:0 8px 35px #0009;transition:transform .25s,opacity .25s;max-width:calc(100% - 32px);text-align:center}.syncToast.show{opacity:1;transform:translate(-50%,0)}html[dir="rtl"] body{font-family:Tahoma,Arial,"Segoe UI",sans-serif}html[dir="rtl"] .sideDrawer{right:auto;left:0;transform:translateX(-105%)}html[dir="rtl"] .sideDrawer.open{transform:translateX(0)}html[dir="rtl"] .header,html[dir="rtl"] .row,html[dir="rtl"] .menuLink{direction:rtl}html[dir="rtl"] .menuArrow{transform:rotate(180deg)}html[dir="rtl"] input[type="number"],html[dir="rtl"] input[type="date"],html[dir="rtl"] .marketPrice,html[dir="rtl"] .return{direction:ltr;text-align:start}@media(max-width:600px){.headerRight{gap:6px}.privatePill{display:none}.quickSync span{display:none}.quickSync{padding:9px 11px}.kdpMetrics{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(prefers-reduced-motion:reduce){.syncToast,.quickSync{transition:none}}
+
+/* Personal screen lock: convenience only; GitHub Pages content remains publicly accessible. */
+html:not(.auth-ok) .shell,html:not(.auth-ok) #sideDrawer,html:not(.auth-ok) #menuBackdrop,html:not(.auth-ok) .mobileAdd,html:not(.auth-ok) #expenseDialog{visibility:hidden!important;pointer-events:none!important}
+html:not(.auth-ok) body{overflow:hidden}
+.authLayer{position:fixed;inset:0;z-index:5000;display:grid;place-items:center;overflow:auto;padding:calc(22px + env(safe-area-inset-top)) 18px calc(22px + env(safe-area-inset-bottom));background:radial-gradient(ellipse 90% 65% at 15% 5%,#235a58 0%,transparent 65%),radial-gradient(ellipse 80% 50% at 100% 100%,#192f53 0%,transparent 75%),#081321}
+html.auth-ok .authLayer{display:none}
+.authPanel{width:min(100%,440px);padding:32px 27px 25px;background:#122237eF;border:1px solid #35536a;border-radius:28px;box-shadow:0 20px 65px #03081085;backdrop-filter:blur(12px)}
+.authBrand{display:flex;align-items:center;gap:12px;margin-bottom:33px;font-size:20px;font-weight:800;letter-spacing:-.6px}
+.authLogo{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#69e7bd,#348cc2);color:#092332;font-size:29px;font-weight:900}
+.authEyebrow{display:inline-flex;padding:7px 12px;background:#17382f;color:#a2f6da;border-radius:999px;font-size:12px;font-weight:750}
+.authPanel h1{font-size:clamp(27px,5vw,36px);margin:18px 0 8px;letter-spacing:-1.3px}
+.authIntro{line-height:1.6;color:#b4c7d9;font-size:14px;margin:0 0 28px}
+.authField{display:grid;gap:8px;margin-bottom:18px}
+.authField label{font-size:13px;color:#c8dbea;font-weight:650}
+.authField input{width:100%;border:1px solid #39536a;border-radius:14px;background:#0b192a;color:#f6fbff;font:inherit;font-size:16px;padding:15px}
+.authField input:focus{outline:2px solid #52e1b3;outline-offset:2px}
+.authPassword{position:relative}.authPassword input{padding-inline-end:80px}
+.authToggle{position:absolute;inset-inline-end:7px;top:7px;bottom:7px;padding:4px 12px;background:#1f354a;color:#e5f6ff;border:0;border-radius:10px;font-size:12px}
+.authSubmit{width:100%;padding:15px;border:0;border-radius:14px;background:linear-gradient(110deg,#5ce0ae,#75ead1);color:#082822;font-weight:800;font-size:16px;margin-top:6px}
+.authSubmit:disabled{opacity:.55}
+.authError{min-height:24px;color:#ffa4b1;font-size:13px;line-height:1.5;margin:11px 0 0}
+.authFooter{font-size:11px;line-height:1.6;color:#96aaba;border-top:1px solid #284156;margin-top:15px;padding-top:17px}
+#lockApp{font-size:12px;white-space:nowrap}
+@media(max-width:600px){.authPanel{padding:27px 22px 21px}.authBrand{margin-bottom:26px}#lockApp{padding:9px}}
 </style>
 </head>
 <body>
