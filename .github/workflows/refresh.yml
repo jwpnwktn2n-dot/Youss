@@ -37,6 +37,20 @@ jobs:
           node --check ar-dict.js
           node --check i18n.js
           node --check login.js
+      - name: Validate inline app code
+        run: |
+          python - <<'PY'
+          import pathlib, re
+          html=pathlib.Path('index.html').read_text(encoding='utf-8')
+          match=re.search(r'<script>(.*?)</script>',html,re.S)
+          assert match, 'inline app logic missing'
+          pathlib.Path('/tmp/mymoney-inline.js').write_text(match.group(1),encoding='utf-8')
+          PY
+          node --check /tmp/mymoney-inline.js
+      - name: Test budget interactions
+        run: |
+          npm install --no-save --ignore-scripts jsdom@26
+          node tests/budget-ui.cjs
       - name: Prepare public website files
         run: |
           mkdir -p _site/data
