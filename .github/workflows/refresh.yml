@@ -1,41 +1,50 @@
 name: Update and publish MyMoney Casa
+
 on:
   push:
     branches: [main]
   schedule:
     - cron: '17 5,11,17,23 * * *'
   workflow_dispatch:
+
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: mymoney-casa-pages
   cancel-in-progress: false
+
 jobs:
   prepare:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout latest website
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install dependencies
+      - name: Install updater dependencies
         run: pip install -r scripts/requirements.txt
-      - name: Refresh dated public market/news snapshots
+      - name: Refresh public Casablanca prices and news
         run: python scripts/update_market.py
-      - name: Save verified snapshot updates
+      - name: Prepare public website files
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/market.json data/news.json
-          git diff --cached --quiet || (git commit -m 'Refresh Casablanca snapshots' && git push)
+          mkdir -p _site/data
+          cp index.html manifest.webmanifest icon.svg sw.js .nojekyll _site/
+          cp data/market.json data/news.json _site/data/
+          test -s _site/index.html
+          python -m json.tool _site/data/market.json > /dev/null
+          python -m json.tool _site/data/news.json > /dev/null
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Upload website files
+      - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
+
   publish:
     needs: prepare
     runs-on: ubuntu-latest
@@ -43,6 +52,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy MyMoney Casa
         id: deployment
         uses: actions/deploy-pages@v4
