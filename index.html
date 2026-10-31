@@ -212,7 +212,7 @@ html[dir="rtl"] .catHeadV7,html[dir="rtl"] .catFootV7{direction:rtl}
         const share=amount=>salary?(100*amount/salary).toFixed(1)+'%':'—';
         $('budgetSnapshot').innerHTML=
           '<div class="budgetSummaryStat"><span class="label">'+tr('Expenses recorded','المصاريف المسجلة')+'</span><strong>'+money(expenses())+'</strong><small>'+share(expenses())+' '+tr('of net salary','من صافي الراتب')+'</small></div>'+
-          '<div class="budgetSummaryStat"><span class="label">'+tr('Invested this month','الاستثمار هذا الشهر')+'</span><strong>'+money(invested())+'</strong><small>'+share(invested())+' of net salary</small></div>'+
+          '<div class="budgetSummaryStat"><span class="label">'+tr('Invested this month','الاستثمار هذا الشهر')+'</span><strong>'+money(invested())+'</strong><small>'+share(invested())+' '+tr('of net salary','من صافي الراتب')+'</small></div>'+
           '<div class="budgetSummaryStat"><span class="label">'+tr('Money remaining','الرصيد المتبقي')+'</span><strong class="'+(cashLeft<0?'negative':'')+'">'+money(cashLeft)+'</strong><small>'+tr('Salary + extra income − spending − investing','الراتب والدخل الإضافي ناقص المصاريف والاستثمار')+'</small></div>';
         root.innerHTML=state.categories.map(c=>{
           const used=categorySpent(c.id),limit=num(c.limit),budgetShare=share(limit),usedShare=share(used);
@@ -221,7 +221,7 @@ html[dir="rtl"] .catHeadV7,html[dir="rtl"] .catFootV7{direction:rtl}
           const line=limit>0?(tr('Planned ','الميزانية ')+money(limit)+' · '+budgetShare+' '+tr('of salary','من الراتب')+(over?tr(' · Over budget',' · تجاوزت الميزانية'):'')):tr('No spending limit set','بدون حد إنفاق');
           const stat=c.id==='investments'?tr('Investment contributions','مساهمات الاستثمار'):(entries+' '+tr(entries===1?'expense':'expenses','عملية')+' '+tr('recorded','مسجلة'));
           return '<div class="cat catV7"><div class="catHeadV7"><div><div class="catTitleV7">'+safe(ar?({housing:'🏠 السكن والإيجار',groceries:'🛒 المواد الغذائية',transport:'🚙 المواصلات',bills:'📱 الفواتير والاشتراكات',savings:'🏦 الادخار',investments:'📈 الاستثمارات',leisure:'🎉 الترفيه',other:'📦 أخرى'}[c.id]||c.name):c.name)+'</div>'+
-            '<div class="catSpentV7">'+money(used)+' '+tr('spent','مصروف')</div></div><span class="catPctV7">'+usedShare+' '+tr('of salary','من الراتب')</span></div>'+
+            '<div class="catSpentV7">'+money(used)+' '+tr('spent','مصروف')+'</div></div><span class="catPctV7">'+usedShare+' '+tr('of salary','من الراتب')+'</span></div>'+
             '<div class="catFineV7">'+stat+' · '+line+'</div>'+
             (limit>0?'<div class="bar" aria-label="Spending relative to budget"><div class="fill '+(over?'over':'')+'" style="width:'+Math.min(100,percent)+'%"></div></div>':'')+
             '<div class="catFootV7"><div class="catBudgetFieldV7"><label for="cat-'+safe(c.id)+'">'+tr('Monthly budget (€)','الميزانية الشهرية (€)')+'</label>'+
