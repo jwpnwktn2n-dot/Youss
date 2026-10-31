@@ -17,14 +17,14 @@
  async function sync(){
    if(busy)return;
    busy=true;for(const id of ids){$(id).disabled=true;$(id).classList.add('syncing')}
-   message('Checking published Casablanca market data…');
+   message(document.documentElement.lang==='ar'?'جارٍ جلب أحدث بيانات بورصة الدار البيضاء…':'Checking published Casablanca market data…');
    try{
      const [market,news]=await Promise.all([getJSON('data/market.json'),getJSON('data/news.json')]);
      if(!Array.isArray(market.stocks)||!Array.isArray(news.articles))throw new Error('Bad data');
      dispatchEvent(new CustomEvent('mymoney-market-sync',{detail:{market,news}}));
      $('refreshNews').click();
-     message('Updated published snapshots · Market: '+market.updated+' · News: '+news.updated);
-   }catch(error){message('Sync unavailable. Check your connection and try again.',true)}
+     message((document.documentElement.lang==='ar'?'تم تحديث البيانات المنشورة · السوق: ':'Updated published snapshots · Market: ')+market.updated+(document.documentElement.lang==='ar'?' · الأخبار: ':' · News: ')+news.updated);
+   }catch(error){message(document.documentElement.lang==='ar'?'تعذّر التحديث. تحقق من الاتصال وحاول مجددًا.':'Sync unavailable. Check your connection and try again.',true)}
    finally{busy=false;for(const id of ids){$(id).disabled=false;$(id).classList.remove('syncing')}}
  }
  for(const id of ids)$(id).addEventListener('click',sync);
