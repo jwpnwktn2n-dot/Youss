@@ -1,0 +1,327 @@
+{
+  "updated": "2026-10-30",
+  "mode": "snapshot",
+  "source": "https://casabourse.ma/screener/",
+  "scope": "Tracked source subset; not entire market",
+  "masi": {
+    "close": 16537.91,
+    "date": "2026-10-30",
+    "source": "https://casastocks.com/?lang=fr"
+  },
+  "stocks": [
+    {
+      "symbol": "WAA",
+      "name": "Wafa Assurance",
+      "sector": "Assurances",
+      "price": 5142,
+      "ret1m": 4.73,
+      "volume": 3,
+      "pe": 17.54,
+      "revenueCagr": 3.94,
+      "profitCagr": 1.71
+    },
+    {
+      "symbol": "OUL",
+      "name": "Oulmes",
+      "sector": "Agro-alimentaire",
+      "price": 1196,
+      "ret1m": 3.46,
+      "volume": 1,
+      "pe": 21.08,
+      "revenueCagr": 8.05,
+      "profitCagr": 11.49
+    },
+    {
+      "symbol": "ADH",
+      "name": "Addoha",
+      "sector": "Immobilier",
+      "price": 34.1,
+      "ret1m": 1.79,
+      "volume": 366100,
+      "pe": 26.6,
+      "revenueCagr": -8.46,
+      "profitCagr": -8.66
+    },
+    {
+      "symbol": "UMR",
+      "name": "Unimer",
+      "sector": "Divers",
+      "price": 169,
+      "ret1m": 0.06,
+      "volume": 4,
+      "pe": 56.73,
+      "revenueCagr": 0.61,
+      "profitCagr": null
+    },
+    {
+      "symbol": "IMO",
+      "name": "Immorente Invest",
+      "sector": "OPCI",
+      "price": 91,
+      "ret1m": 0.03,
+      "volume": 1127,
+      "pe": 19.76,
+      "revenueCagr": 22.2,
+      "profitCagr": null
+    },
+    {
+      "symbol": "AFM",
+      "name": "AFMA",
+      "sector": "Assurances",
+      "price": 1250,
+      "ret1m": 0,
+      "volume": 100,
+      "pe": 17.12,
+      "revenueCagr": 5.84,
+      "profitCagr": 2.84
+    },
+    {
+      "symbol": "BOA",
+      "name": "Bank of Africa",
+      "sector": "Banques",
+      "price": 189,
+      "ret1m": -1.56,
+      "volume": 33216,
+      "pe": 10.92,
+      "revenueCagr": 6.76,
+      "profitCagr": 11.32
+    },
+    {
+      "symbol": "BCP",
+      "name": "Banque Centrale Populaire",
+      "sector": "Banques",
+      "price": 245,
+      "ret1m": -2,
+      "volume": 19993,
+      "pe": 11.06,
+      "revenueCagr": 7.23,
+      "profitCagr": 6.66
+    },
+    {
+      "symbol": "ATW",
+      "name": "Attijariwafa Bank",
+      "sector": "Banques",
+      "price": 665,
+      "ret1m": -2.21,
+      "volume": 71222,
+      "pe": 13.44,
+      "revenueCagr": 5.67,
+      "profitCagr": 6.85
+    },
+    {
+      "symbol": "MUT",
+      "name": "Mutandis",
+      "sector": "Agro-alimentaire",
+      "price": 216,
+      "ret1m": -2.92,
+      "volume": 1971,
+      "pe": 15.83,
+      "revenueCagr": 5.31,
+      "profitCagr": 18.79
+    },
+    {
+      "symbol": "CSR",
+      "name": "Cosumar",
+      "sector": "Agro-alimentaire",
+      "price": 172.05,
+      "ret1m": -3.12,
+      "volume": 7359,
+      "pe": 23.1,
+      "revenueCagr": 5.13,
+      "profitCagr": 0.87
+    },
+    {
+      "symbol": "ARD",
+      "name": "Aradei Capital",
+      "sector": "OPCI",
+      "price": 413,
+      "ret1m": -3.53,
+      "volume": 3793,
+      "pe": 9.71,
+      "revenueCagr": 14.47,
+      "profitCagr": 16.51
+    },
+    {
+      "symbol": "SOT",
+      "name": "Sothema",
+      "sector": "Industrie Pharmaceutique",
+      "price": 298,
+      "ret1m": -11.55,
+      "volume": 331,
+      "pe": 29.61,
+      "revenueCagr": 9.22,
+      "profitCagr": 12.59
+    },
+    {
+      "symbol": "AKT",
+      "name": "Akdital",
+      "sector": "Santé",
+      "price": 979,
+      "ret1m": -11.8,
+      "volume": 19378,
+      "pe": 27.72,
+      "revenueCagr": 54.15,
+      "profitCagr": 79.28
+    },
+    {
+      "symbol": "GTM",
+      "name": "SGTM",
+      "sector": "Industrie",
+      "price": 543,
+      "ret1m": -10.98,
+      "volume": 9030,
+      "pe": 24.28,
+      "revenueCagr": 26.97,
+      "profitCagr": 43.54
+    },
+    {
+      "symbol": "TGC",
+      "name": "TGCC",
+      "sector": "Industrie",
+      "price": 559.9,
+      "ret1m": -15.17,
+      "volume": 14126,
+      "pe": 20.39,
+      "revenueCagr": 40.3,
+      "profitCagr": 136.01
+    },
+    {
+      "symbol": "CAP",
+      "name": "Cash Plus",
+      "sector": "Services Financiers",
+      "price": 204.3,
+      "ret1m": -10.79,
+      "volume": 2544,
+      "pe": 20.7,
+      "revenueCagr": 25.19,
+      "profitCagr": 26.04
+    },
+    {
+      "symbol": "VCN",
+      "name": "Vicenne",
+      "sector": "Santé",
+      "price": 289,
+      "ret1m": -9.4,
+      "volume": 6621,
+      "pe": 20.55,
+      "revenueCagr": 22.28,
+      "profitCagr": 43.74
+    },
+    {
+      "symbol": "STR",
+      "name": "Stroc Industrie",
+      "sector": "Industrie",
+      "price": 144.6,
+      "ret1m": -13.36,
+      "volume": 1638,
+      "pe": 379.26,
+      "revenueCagr": -6.32,
+      "profitCagr": -23.7
+    },
+    {
+      "symbol": "SNA",
+      "name": "Stokvis Nord Afrique",
+      "sector": "Distribution",
+      "price": 46.1,
+      "ret1m": -19.12,
+      "volume": 2036,
+      "pe": 31.11,
+      "revenueCagr": -5.23,
+      "profitCagr": 4.53
+    },
+    {
+      "symbol": "T2S",
+      "name": "T2S Group",
+      "sector": "Santé",
+      "price": 209,
+      "ret1m": -3.6,
+      "volume": 8394,
+      "pe": 22.26,
+      "revenueCagr": 13.3,
+      "profitCagr": 65.23
+    },
+    {
+      "symbol": "MSA",
+      "name": "Marsa Maroc",
+      "sector": "Transport",
+      "price": 740,
+      "ret1m": -7.73,
+      "volume": 15297,
+      "pe": 34.19,
+      "revenueCagr": 10.24,
+      "profitCagr": 15.53
+    }
+  ],
+  "twoYear": [],
+  "growth": [
+    {
+      "name": "Akdital",
+      "symbol": "AKT",
+      "pe": 27.72,
+      "revenueCagr": 54.15,
+      "profitCagr": 79.28
+    },
+    {
+      "name": "TGCC",
+      "symbol": "TGC",
+      "pe": 20.39,
+      "revenueCagr": 40.3,
+      "profitCagr": 136.01
+    },
+    {
+      "name": "SGTM",
+      "symbol": "GTM",
+      "pe": 24.28,
+      "revenueCagr": 26.97,
+      "profitCagr": 43.54
+    },
+    {
+      "name": "Cash Plus",
+      "symbol": "CAP",
+      "pe": 20.7,
+      "revenueCagr": 25.19,
+      "profitCagr": 26.04
+    },
+    {
+      "name": "Vicenne",
+      "symbol": "VCN",
+      "pe": 20.55,
+      "revenueCagr": 22.28,
+      "profitCagr": 43.74
+    },
+    {
+      "name": "T2S Group",
+      "symbol": "T2S",
+      "pe": 22.26,
+      "revenueCagr": 13.3,
+      "profitCagr": 65.23
+    }
+  ],
+  "best2025": [
+    {
+      "symbol": "STR",
+      "name": "Stroc Industrie",
+      "return": 482.64
+    },
+    {
+      "symbol": "SNA",
+      "name": "Stokvis Nord Afrique",
+      "return": 474.22
+    },
+    {
+      "symbol": "FBR",
+      "name": "Fenie Brossette",
+      "return": 258.43
+    },
+    {
+      "symbol": "S2M",
+      "name": "S.M Monétique",
+      "return": 148.94
+    },
+    {
+      "symbol": "SID",
+      "name": "Sonasid",
+      "return": 126.34
+    }
+  ]
+}
