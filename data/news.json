@@ -1,0 +1,38 @@
+{
+  "updated": "2026-10-31",
+  "mode": "snapshot",
+  "ipos": [
+    {
+      "company": "LAPROPHAN",
+      "date": "2026-10-28",
+      "stage": "IPO prospectus approved",
+      "authority": "AMMC",
+      "detail": "Visa VI/EM/033/2026 — confirm current trading status with exchange",
+      "url": "https://www.ammc.ma/fr/node/55955"
+    },
+    {
+      "company": "JET ENERGY",
+      "date": "2026-10-21",
+      "stage": "IPO prospectus approved",
+      "authority": "AMMC",
+      "detail": "Visa VI/EM/030/2026 — confirm current trading status with exchange",
+      "url": "https://www.ammc.ma/fr/espace-emetteurs/liste-operations-financieres"
+    }
+  ],
+  "articles": [
+    {
+      "title": "LAPROPHAN — AMMC approves IPO prospectus",
+      "date": "2026-10-28",
+      "source": "AMMC",
+      "category": "ipo",
+      "url": "https://www.ammc.ma/fr/node/55955"
+    },
+    {
+      "title": "JET ENERGY — AMMC approves IPO prospectus",
+      "date": "2026-10-21",
+      "source": "AMMC",
+      "category": "ipo",
+      "url": "https://www.ammc.ma/fr/espace-emetteurs/liste-operations-financieres"
+    }
+  ]
+}
