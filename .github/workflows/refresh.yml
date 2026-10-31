@@ -30,6 +30,12 @@ jobs:
         run: pip install -r scripts/requirements.txt
       - name: Refresh public Casablanca prices and news
         run: python scripts/update_market.py
+      - name: Validate JavaScript before publishing
+        run: |
+          node --check kdp.js
+          node --check enhancements.js
+          node --check ar-dict.js
+          node --check i18n.js
       - name: Prepare public website files
         run: |
           mkdir -p _site/data
