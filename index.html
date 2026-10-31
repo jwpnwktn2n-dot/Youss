@@ -206,7 +206,35 @@ html[dir="rtl"] .catHeadV7,html[dir="rtl"] .catFootV7{direction:rtl}
         $('spentTotal').textContent=money(spent());let pct=income()?100*spent()/income():0;$('progressLabel').textContent=`${Math.round(pct)}% of income used`;$('overallBar').style.width=Math.min(100,pct)+'%';$('overallBar').classList.toggle('over',pct>100);
         renderCategories();renderTransactions();renderInvest();renderGoals();save();
       }
-      function renderCategories(){const root=$('categories');root.innerHTML=state.categories.map(c=>{let used=categorySpent(c.id),limit=num(c.limit),p=limit?Math.round(100*used/limit):used?100:0;return `<div class="cat"><div class="catline"><div><div class="name">${safe(c.name)}</div><div class="subline">${money(used)} used of ${money(limit)}${used>limit&&limit?'<span class="negative"> · Over budget</span>':''}</div></div><div><label class="label" for="cat-${safe(c.id)}">Budget €</label><input id="cat-${safe(c.id)}" type="number" min="0" step="0.01" inputmode="decimal" data-limit="${safe(c.id)}" value="${limit}" aria-label="Budget for ${safe(c.name)}"></div></div><div class="bar"><div class="fill ${used>limit?'over':''}" style="width:${Math.min(100,p)}%"></div></div></div>`}).join('');root.querySelectorAll('[data-limit]').forEach(inp=>inp.addEventListener('change',()=>{const c=state.categories.find(c=>c.id===inp.dataset.limit);if(c){c.limit=num(inp.value);render()}}))}
+      function renderCategories(){
+        const root=$('categories'),salary=num(data().salary),cashLeft=income()-spent();
+        const share=amount=>salary?(100*amount/salary).toFixed(1)+'%':'—';
+        $('budgetSnapshot').innerHTML=
+          '<div class="budgetSummaryStat"><span class="label">Expenses recorded</span><strong>'+money(expenses())+'</strong><small>'+share(expenses())+' of net salary</small></div>'+
+          '<div class="budgetSummaryStat"><span class="label">Invested this month</span><strong>'+money(invested())+'</strong><small>'+share(invested())+' of net salary</small></div>'+
+          '<div class="budgetSummaryStat"><span class="label">Money remaining</span><strong class="'+(cashLeft<0?'negative':'')+'">'+money(cashLeft)+'</strong><small>Salary + extra income − spending − investing</small></div>';
+        root.innerHTML=state.categories.map(c=>{
+          const used=categorySpent(c.id),limit=num(c.limit),budgetShare=share(limit),usedShare=share(used);
+          const percent=limit?100*used/limit:0,over=limit>0&&used>limit;
+          const entries=data().expenses.filter(e=>e.category===c.id).length;
+          const line=limit>0?('Planned '+money(limit)+' · '+budgetShare+' of salary'+(over?' · Over budget':'')):'No spending limit set';
+          const stat=c.id==='investments'?'Investment contributions':(entries+' '+(entries===1?'expense':'expenses')+' recorded');
+          return '<div class="cat catV7"><div class="catHeadV7"><div><div class="catTitleV7">'+safe(c.name)+'</div>'+
+            '<div class="catSpentV7">'+money(used)+' spent</div></div><span class="catPctV7">'+usedShare+' of salary</span></div>'+
+            '<div class="catFineV7">'+stat+' · '+line+'</div>'+
+            (limit>0?'<div class="bar" aria-label="Spending relative to budget"><div class="fill '+(over?'over':'')+'" style="width:'+Math.min(100,percent)+'%"></div></div>':'')+
+            '<div class="catFootV7"><div class="catBudgetFieldV7"><label for="cat-'+safe(c.id)+'">Monthly budget (€)</label>'+
+            '<input id="cat-'+safe(c.id)+'" type="number" min="0" step="0.01" inputmode="decimal" data-limit="'+safe(c.id)+'" value="'+limit+'" aria-label="Monthly budget for '+safe(c.name)+'"></div>'+
+            (c.id==='investments'?'<button type="button" class="catQuickBtn" data-invest-shortcut="1">View investments ↗</button>':
+            '<button type="button" class="catQuickBtn" data-quick-category="'+safe(c.id)+'" aria-label="Add '+safe(c.name)+' expense">+ Add expense</button>')+'</div></div>';
+        }).join('');
+        root.querySelectorAll('[data-limit]').forEach(inp=>inp.addEventListener('change',()=>{
+          const c=state.categories.find(c=>c.id===inp.dataset.limit);
+          if(c){c.limit=num(inp.value);render()}
+        }));
+        root.querySelectorAll('[data-quick-category]').forEach(btn=>btn.addEventListener('click',()=>openDialog(btn.dataset.quickCategory)));
+        root.querySelectorAll('[data-invest-shortcut]').forEach(btn=>btn.addEventListener('click',()=>setTab('invest')));
+      }
       function allTransactions(){return [...data().expenses].sort((a,b)=>b.date.localeCompare(a.date))}
       function item(e){let cat=state.categories.find(c=>c.id===e.category);return `<div class="transaction"><div class="tleft"><div class="tname">${safe(e.title)}</div><div class="tmeta">${safe(cat?.name||'Other')} · ${safe(e.date)}</div></div><div class="tright"><strong>−${money(e.amount)}</strong><button class="trash" data-delete="${safe(e.id)}" title="Delete expense" aria-label="Delete ${safe(e.title)}">×</button></div></div>`}
       function renderTransactions(){const arr=allTransactions();$('transactions').innerHTML=arr.length?arr.map(item).join(''):'<p class="muted">No expenses yet. Tap + Add expense to start.</p>';$('recentTransactions').innerHTML=arr.length?arr.slice(0,3).map(item).join(''):'<p class="muted">Your purchases will appear here as you add them.</p>';document.querySelectorAll('[data-delete]').forEach(b=>b.addEventListener('click',()=>{if(confirm('Delete this expense?')){data().expenses=data().expenses.filter(e=>e.id!==b.dataset.delete);render()}}))}
