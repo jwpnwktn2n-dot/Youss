@@ -276,7 +276,24 @@ html[dir="rtl"] .catHeadV7,html[dir="rtl"] .catFootV7{direction:rtl}
       for(const f of ['salary','bonus'])$(f).addEventListener('change',()=>{data()[f]=num($(f).value);if(f==='salary')state.salary=data()[f];render()});
       for(const k of ['stock','gold','bonds','bitcoin'])$('i-'+k).addEventListener('change',()=>{data().invest[k]=num($('i-'+k).value);render()});
       $('addExpenseFloat').addEventListener('click',openDialog);$('addExpenseInline').addEventListener('click',openDialog);$('closeDialog').addEventListener('click',closeDialog);$('cancelDialog').addEventListener('click',closeDialog);$('expenseDialog').addEventListener('click',e=>{if(e.target===$('expenseDialog'))closeDialog()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDialog();closeMenu(true)}});
-      $('expenseForm').addEventListener('submit',e=>{e.preventDefault();const title=$('expenseTitle').value.trim(),amount=Number($('expenseAmount').value),date=$('expenseDate').value,category=$('expenseCategory').value;if(!title||!Number.isFinite(amount)||amount<=0||!/^\d{4}-\d{2}-\d{2}$/.test(date)){ $('formError').textContent='Enter a valid description, amount and date.';return}let dest=date.slice(0,7);if(!state.months[dest])state.months[dest]={salary:state.salary,bonus:0,expenses:[],invest:{stock:0,gold:0,bonds:0,bitcoin:0}};data(dest).expenses.push({id:'e'+Date.now()+Math.random().toString(36).slice(2,7),title,amount,date,category});month=new Date(Number(dest.slice(0,4)),Number(dest.slice(5,7))-1,1);closeDialog();setTab('budget')});
+      $('expenseForm').addEventListener('submit',e=>{
+        e.preventDefault();
+        const title=$('expenseTitle').value.trim();
+        const amount=Number($('expenseAmount').value);
+        const date=$('expenseDate').value,category=$('expenseCategory').value;
+        if(!title||!Number.isFinite(amount)||amount<=0||!/^\d{4}-\d{2}-\d{2}$/.test(date)||!state.categories.some(c=>c.id===category&&c.id!=='investments')){
+          $('formError').textContent='Enter a valid description, amount, category and date.';return;
+        }
+        const dest=date.slice(0,7),source=mk();
+        const old=editingExpenseId?data(source).expenses.find(x=>x.id===editingExpenseId):null;
+        if(editingExpenseId&&!old){$('formError').textContent='Expense not found. Reopen and try again.';return}
+        const entry={id:old?.id||'e'+Date.now()+Math.random().toString(36).slice(2,7),title,amount,date,category};
+        if(!state.months[dest])state.months[dest]={salary:state.salary,bonus:0,expenses:[],invest:{stock:0,gold:0,bonds:0,bitcoin:0}};
+        if(old)data(source).expenses=data(source).expenses.filter(x=>x.id!==old.id);
+        data(dest).expenses.push(entry);
+        month=new Date(Number(dest.slice(0,4)),Number(dest.slice(5,7))-1,1);
+        closeDialog();setTab('budget');
+      });
       $('addCategory').addEventListener('click',()=>{let name=prompt('New budget category name:');if(!name||!name.trim())return;state.categories.push({id:'cat-'+Date.now(),name:name.trim().slice(0,50),limit:0});render()});$('addGoal').addEventListener('click',()=>{let name=prompt('New savings goal name:');if(!name||!name.trim())return;state.goals.push({id:'goal-'+Date.now(),name:name.trim().slice(0,60),target:0,saved:0});render()});
       $('exportData').addEventListener('click',()=>{let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='mymoney-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)});
       $('importData').addEventListener('click',()=>$('importFile').click());$('importFile').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=JSON.parse(await f.text());if(!Array.isArray(parsed.categories)||!Array.isArray(parsed.goals)||!parsed.months||typeof parsed.months!=='object')throw Error('Invalid file');if(!confirm('Replace your current app data with this backup?'))return;state=parsed;render();alert('Backup imported successfully.')}catch(err){alert('That file is not a valid MyMoney backup.')}finally{e.target.value=''}});
