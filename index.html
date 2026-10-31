@@ -84,8 +84,23 @@ html.auth-ok .authLayer{display:none}
 </style>
 </head>
 <body>
+<div class="authLayer" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginHeading">
+ <div class="authPanel">
+  <div class="authBrand"><div class="authLogo" aria-hidden="true">€</div><div>MyMoney <span style="color:#6ae3bd">Casa</span></div></div>
+  <div class="authEyebrow">PERSONAL SPACE</div>
+  <h1 id="loginHeading">Welcome back.</h1>
+  <p class="authIntro">Sign in to open your personal finance dashboard.</p>
+  <form id="loginForm" autocomplete="on">
+   <div class="authField"><label for="loginUsername">Username</label><input id="loginUsername" type="text" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" enterkeyhint="next" required></div>
+   <div class="authField"><label for="loginPassword">Password</label><div class="authPassword"><input id="loginPassword" type="password" name="password" autocomplete="current-password" required><button id="togglePassword" class="authToggle" type="button" aria-pressed="false">Show</button></div></div>
+   <button class="authSubmit" id="loginSubmit" type="submit">Sign in</button>
+   <p class="authError" id="loginError" role="alert" aria-live="polite"></p>
+  </form>
+  <div class="authFooter">This screen locks your personal app interface on this device. The GitHub Pages website itself remains publicly accessible.</div>
+ </div>
+</div>
 <main class="shell">
-<header class="header"><div class="brand"><div class="logo">€</div><div><div class="brandname">MyMoney <span style="color:var(--mint)">Casa</span></div><div class="sub">Personal finance · Casablanca equities</div></div></div><div class="headerRight"><div class="pill privatePill">● Private on this device</div><select id="langQuick" class="languageSelect" aria-label="App language"><option value="en">EN</option><option value="ar">العربية</option></select><button id="quickSync" type="button" class="iconBtn quickSync" aria-label="Sync published Casablanca market data">↻ <span>Sync</span></button><button aria-controls="sideDrawer" aria-expanded="false" aria-label="Open app menu" class="menuTrigger" id="menuTrigger" type="button"><span aria-hidden="true" class="menuGlyph">⚙</span><small>Menu</small></button></div></header>
+<header class="header"><div class="brand"><div class="logo">€</div><div><div class="brandname">MyMoney <span style="color:var(--mint)">Casa</span></div><div class="sub">Personal finance · Casablanca equities</div></div></div><div class="headerRight"><div class="pill privatePill">● Private on this device</div><select id="langQuick" class="languageSelect" aria-label="App language"><option value="en">EN</option><option value="ar">العربية</option></select><button id="quickSync" type="button" class="iconBtn quickSync" aria-label="Sync published Casablanca market data">↻ <span>Sync</span></button><button id="lockApp" class="iconBtn" type="button" aria-label="Lock app">🔒 Lock</button><button aria-controls="sideDrawer" aria-expanded="false" aria-label="Open app menu" class="menuTrigger" id="menuTrigger" type="button"><span aria-hidden="true" class="menuGlyph">⚙</span><small>Menu</small></button></div></header>
 <div class="monthNav" id="monthNav"><div><div class="sub" id="monthEyebrow">YOUR DASHBOARD</div><div class="monthTitle" id="monthTitle"></div></div><div class="monthBtns"><button aria-label="Previous month" class="iconBtn" id="prevMonth">‹</button><button aria-label="Next month" class="iconBtn" id="nextMonth">›</button></div></div>
 
 <section aria-label="Overview" class="section active" id="overview">
@@ -218,5 +233,5 @@ html.auth-ok .authLayer{display:none}
       render();loadCasa();if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
     })();
   </script>
-<div id="syncToast" role="status" aria-live="polite" class="syncToast"></div><script src="./kdp.js" defer></script><script src="./enhancements.js" defer></script><script src="./ar-dict.js" defer></script><script src="./i18n.js" defer></script></body>
+<div id="syncToast" role="status" aria-live="polite" class="syncToast"></div><script src="./kdp.js" defer></script><script src="./enhancements.js" defer></script><script src="./ar-dict.js" defer></script><script src="./i18n.js" defer></script><script src="./login.js" defer></script></body>
 </html>
