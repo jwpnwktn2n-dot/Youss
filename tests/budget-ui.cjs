@@ -28,11 +28,15 @@ function test(){
   const initial=getState();
   assert.equal(initial.salary,3580);
   assert.equal($('budgetSnapshot').children.length,3);
+  assert.equal(document.querySelectorAll('.budgetItem').length,8,'each budget category gets one compact row');
+  assert.equal(document.querySelectorAll('[data-quick-category]').length,7,'only one Add button for each expense category');
+  assert.ok(document.querySelector('.budgetItem .budgetAdjust summary'),'budget editing must be tucked under a disclosure');
   clickAdd('groceries',50);
   clickAdd('groceries',43);
   assert.equal(totals('groceries'),93,'two grocery purchases must accumulate, not overwrite');
   const grocery=document.querySelector('[data-quick-category="groceries"]').closest('.catV7');
-  assert.match(grocery.textContent,/93,00/);
+  assert.match(grocery.textContent,/93\s*€/,'compact euro amount');
+  assert.ok($('addExpenseFloat').classList.contains('hide'),'floating expense button must not cover the budget list');
   assert.match(grocery.textContent,/2\.6%/,'93/3580 should show 2.6% of salary');
   const limit=document.querySelector('[data-limit="housing"]');
   limit.value='650';limit.dispatchEvent(new Event('change',{bubbles:true}));
