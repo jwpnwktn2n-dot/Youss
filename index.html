@@ -188,6 +188,32 @@ html[dir="rtl"] .budgetItemTop,html[dir="rtl"] .budgetItemMiddle,html[dir="rtl"]
 .deskMethod .muted{line-height:1.7}
 @media(max-width:450px){.deskStatusGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.deskCompany{padding:12px}.deskSignal{font-size:9px}.deskStory{flex-direction:column;gap:5px}}
 html[dir="rtl"] .deskCompanyHeader,html[dir="rtl"] .deskName,html[dir="rtl"] .deskNumbers,html[dir="rtl"] .deskStory{direction:rtl}
+
+/* Relative risk colors and visual screening grades */
+.deskCompany.riskLow{border-color:#2a705d;border-inline-start:4px solid #40d9a6;background:linear-gradient(120deg,rgba(18,72,55,.35),#142539 60%)}
+.deskCompany.riskMedium{border-color:#776037;border-inline-start:4px solid #eabf63;background:linear-gradient(120deg,rgba(99,70,27,.22),#142539 60%)}
+.deskCompany.riskHigh{border-color:#7a4052;border-inline-start:4px solid #ff7a93;background:linear-gradient(120deg,rgba(103,39,58,.25),#142539 60%)}
+.deskCompany.riskUnknown{border-color:#475469;border-inline-start:4px solid #8695aa}
+.deskSignal.riskTag{border-radius:999px;font-size:10px;line-height:1.25;font-weight:780;padding:7px 9px;text-align:center}
+.deskSignal.riskTag.riskLow,.riskKey.riskLow{background:#153f33;border-color:#338a6d;color:#95f1c9}
+.deskSignal.riskTag.riskMedium,.riskKey.riskMedium{background:#40341d;border-color:#9c7837;color:#ffe2a1}
+.deskSignal.riskTag.riskHigh,.riskKey.riskHigh{background:#4a2333;border-color:#985067;color:#ffb4bf}
+.deskSignal.riskTag.riskUnknown,.riskKey.riskUnknown{background:#263345;border-color:#55667b;color:#c8d3e0}
+.deskNumbers .riskNumber.riskLow{color:#64e6b5}
+.deskNumbers .riskNumber.riskMedium{color:#ffd17d}
+.deskNumbers .riskNumber.riskHigh{color:#ff8da3}
+.deskNumbers .riskNumber.riskUnknown{color:#aebbc9}
+.deskRiskMeter{height:6px;background:#2a3b4d;overflow:hidden;border-radius:999px;margin:-3px 0 12px}
+.deskRiskMeter span{height:100%;display:block;border-radius:999px;transition:width .3s}
+.deskRiskMeter span.riskLow{background:#47dca7}
+.deskRiskMeter span.riskMedium{background:#f3c464}
+.deskRiskMeter span.riskHigh{background:#fb8092}
+.deskRiskMeter span.riskUnknown{background:#8b9bb1}
+.riskLegend{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:14px}
+.riskKey{font-size:10px;font-weight:700;padding:6px 9px;border-radius:999px;border:1px solid}
+.deskFilters{gap:6px;margin-top:10px}
+.deskFilters .filterBtn{font-size:11px;padding:8px 11px}
+@media(max-width:390px){.deskSignal.riskTag{font-size:9px;padding:6px 7px}.deskNumbers b{font-size:13px}}
 </style>
 </head>
 <body>
@@ -255,10 +281,11 @@ html[dir="rtl"] .deskCompanyHeader,html[dir="rtl"] .deskName,html[dir="rtl"] .de
   <div class="row wrap"><div><h2>Research briefing</h2><p class="muted" id="deskModelStatus">Evidence-based analysis</p></div><span id="deskMode" class="dataTag">Checking</span></div>
   <p id="deskExecutive" class="deskExecutive">Loading analysis…</p>
   <div id="deskAIBullets"></div>
-  <div class="deskDisclaimer">Scores are a screening aid, not predictions or trading instructions. Scores are not comparable to audited investment-bank research. Check the age and original sources of each figure.</div>
+  <div class="deskDisclaimer">🟢 Safer = stronger available fundamentals · 🟡 Moderate = mixed evidence · 🔴 High risk = material warning signs · ⚪ Unknown = missing or stale data. The score is relative screening strength, not a probability of losing money.</div>
 </div>
 <div class="card"><div class="row wrap"><h2>Company research</h2><span id="deskCoverage" class="dataTag">—</span></div>
-<div class="filters deskFilters"><button class="filterBtn selected" type="button" data-desk-filter="all">All</button><button class="filterBtn" type="button" data-desk-filter="Research">Research further</button><button class="filterBtn" type="button" data-desk-filter="Watch">Watch</button><button class="filterBtn" type="button" data-desk-filter="Caution">Caution</button></div>
+<div class="riskLegend" aria-label="Relative investment risk colors"><span class="riskKey riskLow">🟢 Safer</span><span class="riskKey riskMedium">🟡 Moderate</span><span class="riskKey riskHigh">🔴 High risk</span><span class="riskKey riskUnknown">⚪ Unknown</span></div>
+<div class="filters deskFilters"><button class="filterBtn selected" type="button" data-desk-filter="all">All</button><button class="filterBtn" type="button" data-desk-filter="lower">🟢 Safer</button><button class="filterBtn" type="button" data-desk-filter="moderate">🟡 Moderate</button><button class="filterBtn" type="button" data-desk-filter="high">🔴 High risk</button><button class="filterBtn" type="button" data-desk-filter="unknown">⚪ Unknown</button></div>
 <input id="deskSearch" class="searchInput deskSearch" type="search" placeholder="Search a stock or company" aria-label="Search research companies">
 <div id="deskCompanies" class="deskCompanies"><p class="muted">Loading…</p></div>
 <button id="deskMore" class="secondary deskMore hide" type="button">Show 10 more</button>
@@ -269,7 +296,7 @@ html[dir="rtl"] .deskCompanyHeader,html[dir="rtl"] .deskName,html[dir="rtl"] .de
 </div>
 <div class="card deskMethod">
 <h2>How these assessments are made</h2>
-<p class="muted">Research rankings use historical revenue and profit growth, indicative P/E, reported volume and one-month momentum. High scores mean <b>worth investigating</b>, not “buy”. Negatives include weak profits, excessive valuation, thin trading, missing filings and stale prices.</p>
+<p class="muted">Research rankings use historical revenue and profit growth, indicative P/E, reported volume and one-month momentum. Green indicates relatively stronger available metrics, not a risk-free asset. Negatives include weak profits, excessive valuation, thin trading, missing filings and stale prices.</p>
 <p class="muted">No automatic buying, bank data, personalized position sizing, price targets, or investment guarantees. To add genuine generative-AI commentary, the repository owner must configure a private server-side API key; otherwise the system clearly labels the report rule-based.</p>
 <a class="source" href="https://www.casablanca-bourse.com/en/market-data/Cours" target="_blank" rel="noopener noreferrer">Official historical prices</a>
 </div>
