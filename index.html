@@ -143,6 +143,51 @@ html[dir="rtl"] .catHeadV7,html[dir="rtl"] .catFootV7{direction:rtl}
 html[dir="rtl"] .budgetItemTop,html[dir="rtl"] .budgetItemMiddle,html[dir="rtl"] .budgetItemBottom,html[dir="rtl"] .budgetMiniAllocation{direction:rtl}
 @media(max-width:590px){.cleanBudget{padding:16px 15px 10px}.cleanBudget .budgetSummaryStat{padding:11px 8px}.budgetSpent{font-size:22px}.budgetItemTop,.budgetItemMiddle,.budgetItemBottom{gap:8px}.budgetMiniAllocation{font-size:11px}}
 @media(max-width:355px){.cleanBudget .budgetSummaryStat strong{font-size:13px}.budgetName{font-size:13px}.cleanBudget .budgetPercent{font-size:10px;padding:4px 7px}}
+
+/* V9: Casablanca Research Desk */
+.deskHero{background:linear-gradient(125deg,#163b43,#183756 70%,#1c314a)}
+.deskTitle{font-size:clamp(29px,6vw,42px)}
+.deskStatusCard{padding:16px 18px}
+.deskLabel{font-size:14px}
+.deskStatusGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:16px}
+.deskStatusGrid>div{border:1px solid #314a60;background:#152a3d;border-radius:12px;padding:11px 9px}
+.deskStatusGrid strong{display:block;font-size:21px;color:#e0fffa;font-weight:780}
+.deskStatusGrid span{display:block;color:#9fb8ca;font-size:11px;margin-top:4px}
+.deskInsight .deskExecutive{font-size:14px;line-height:1.75;color:#d5ebed;margin:16px 0}
+.deskInsight h4,.deskDetail h4{font-size:13px;margin:17px 0 7px}
+.deskInsight ul,.deskDetail ul{padding-inline-start:20px;margin:8px 0;font-size:12px;color:#bfd4e0;line-height:1.7}
+.deskDisclaimer{font-size:11px;line-height:1.6;border-top:1px solid #314354;padding-top:12px;margin-top:14px;color:#a4b7c9}
+.deskSearch{width:100%;margin-top:4px}
+.deskCompanies{display:grid;gap:10px;margin-top:14px}
+.deskCompany{background:#142539;border:1px solid #2d4155;padding:14px 14px 11px;border-radius:16px}
+.deskCompanyHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.deskName{display:flex;align-items:center;gap:9px;min-width:0}
+.deskName strong{font-size:13px;display:block;line-height:1.3;overflow-wrap:anywhere}
+.deskName small{font-size:11px;display:block;color:#90abbe;margin-top:3px}
+.deskAvatar{height:37px;width:37px;display:grid;place-items:center;background:linear-gradient(130deg,#20485a,#28565b);border-radius:12px;color:#b3f7e1;font-weight:750;font-size:12px;flex:none}
+.deskSignal{font-size:10px;font-weight:750;border-radius:10px;padding:7px 8px;white-space:nowrap;background:#264335;border:1px solid #376c5a;color:#a6f7d6}
+.deskSignal.warning{background:#3b3222;border-color:#70602e;color:#f9d69b}
+.deskSignal.negative{background:#462733;border-color:#774050;color:#ffaeb8}
+.deskNumbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:13px 0}
+.deskNumbers span{font-size:11px;color:#9bb1c6;border-right:1px solid #294055;padding-inline-end:8px}
+.deskNumbers span:last-child{border:0}.deskNumbers b{display:block;color:#edfaff;margin-top:5px;font-size:14px;letter-spacing:-.3px;font-variant-numeric:tabular-nums}
+.deskNumbers b.positive{color:var(--mint)}.deskNumbers b.negative{color:var(--red)}
+.deskExpand{border-top:1px solid #2b4252;padding-top:9px}
+.deskExpand summary{cursor:pointer;list-style:none;font-size:12px;font-weight:650;color:#9cdecf;display:flex;gap:8px;align-items:center}
+.deskExpand summary::-webkit-details-marker{display:none}
+.deskExpand[open] summary span{transform:rotate(180deg)}
+.deskDetail{padding:10px 0 4px}
+.deskMetricLine{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #284154;padding:8px 0;font-size:12px;color:#a7c1d0}
+.deskMetricLine b{color:#ebf8ff;font-variant-numeric:tabular-nums}
+.deskLinkedNews{border-bottom:1px solid #243c4e;padding:10px 0;line-height:1.45;font-size:12px}
+.deskLinkedNews a{color:#8ad1fa;text-decoration:none}
+.deskMore{display:block;width:100%;margin-top:16px}
+.deskStory{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid #294354}
+.deskStory:last-child{border:0}.deskStory small{font-size:10px;color:#a1b4c8}.deskStory p{margin:5px 0 0;font-size:12px;line-height:1.5}
+.deskStory a{font-size:11px;white-space:nowrap}
+.deskMethod .muted{line-height:1.7}
+@media(max-width:450px){.deskStatusGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.deskCompany{padding:12px}.deskSignal{font-size:9px}.deskStory{flex-direction:column;gap:5px}}
+html[dir="rtl"] .deskCompanyHeader,html[dir="rtl"] .deskName,html[dir="rtl"] .deskNumbers,html[dir="rtl"] .deskStory{direction:rtl}
 </style>
 </head>
 <body>
