@@ -208,30 +208,49 @@ html[dir="rtl"] .catHeadV7,html[dir="rtl"] .catFootV7{direction:rtl}
       }
       function renderCategories(){
         const root=$('categories'),salary=num(data().salary),cashLeft=income()-spent();
-        const ar=document.documentElement.lang==='ar',tr=(en,arText)=>ar?arText:en;
-        const share=amount=>salary?(100*amount/salary).toFixed(1)+'%':'—';
-        $('budgetSnapshot').innerHTML=
-          '<div class="budgetSummaryStat"><span class="label">'+tr('Expenses recorded','المصاريف المسجلة')+'</span><strong>'+money(expenses())+'</strong><small>'+share(expenses())+' '+tr('of net salary','من صافي الراتب')+'</small></div>'+
-          '<div class="budgetSummaryStat"><span class="label">'+tr('Invested this month','الاستثمار هذا الشهر')+'</span><strong>'+money(invested())+'</strong><small>'+share(invested())+' '+tr('of net salary','من صافي الراتب')+'</small></div>'+
-          '<div class="budgetSummaryStat"><span class="label">'+tr('Money remaining','الرصيد المتبقي')+'</span><strong class="'+(cashLeft<0?'negative':'')+'">'+money(cashLeft)+'</strong><small>'+tr('Salary + extra income − spending − investing','الراتب والدخل الإضافي ناقص المصاريف والاستثمار')+'</small></div>';
+        const ar=document.documentElement.lang==='ar',tr=(en,arabic)=>ar?arabic:en;
+        const fmt=v=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',minimumFractionDigits:0,maximumFractionDigits:2}).format(v);
+        const share=value=>salary?(100*value/salary).toFixed(1)+'%':'—';
+        const summary=[
+          [tr('Spent','المصاريف'),fmt(expenses()),share(expenses())],
+          [tr('Invested','الاستثمار'),fmt(invested()),share(invested())],
+          [tr('Available','المتبقي'),fmt(cashLeft),null]
+        ];
+        $('budgetSnapshot').innerHTML=summary.map(([label,amount,pct],i)=>
+          '<div class="budgetSummaryStat"><span class="label">'+label+'</span><strong class="'+(i===2&&cashLeft<0?'negative':'')+'">'+amount+'</strong>'+(pct?'<small>'+pct+'</small>':'')+'</div>'
+        ).join('');
+        const names={
+          housing:['🏠',tr('Rent & housing','السكن والإيجار')],groceries:['🛒',tr('Groceries','البقالة')],transport:['🚙',tr('Transport','المواصلات')],
+          bills:['📱',tr('Bills','الفواتير')],savings:['🏦',tr('Savings','الادخار')],investments:['📈',tr('Investments','الاستثمارات')],
+          leisure:['🎉',tr('Leisure','الترفيه')],other:['📦',tr('Other','أخرى')]
+        };
         root.innerHTML=state.categories.map(c=>{
-          const used=categorySpent(c.id),limit=num(c.limit),budgetShare=share(limit),usedShare=share(used);
-          const percent=limit?100*used/limit:0,over=limit>0&&used>limit;
-          const entries=data().expenses.filter(e=>e.category===c.id).length;
-          const line=limit>0?(tr('Planned ','الميزانية ')+money(limit)+' · '+budgetShare+' '+tr('of salary','من الراتب')+(over?tr(' · Over budget',' · تجاوزت الميزانية'):'')):tr('No spending limit set','بدون حد إنفاق');
-          const stat=c.id==='investments'?tr('Investment contributions','مساهمات الاستثمار'):(entries+' '+tr(entries===1?'expense':'expenses','عملية')+' '+tr('recorded','مسجلة'));
-          return '<div class="cat catV7"><div class="catHeadV7"><div><div class="catTitleV7">'+safe(ar?({housing:'🏠 السكن والإيجار',groceries:'🛒 المواد الغذائية',transport:'🚙 المواصلات',bills:'📱 الفواتير والاشتراكات',savings:'🏦 الادخار',investments:'📈 الاستثمارات',leisure:'🎉 الترفيه',other:'📦 أخرى'}[c.id]||c.name):c.name)+'</div>'+
-            '<div class="catSpentV7">'+money(used)+' '+tr('spent','مصروف')+'</div></div><span class="catPctV7">'+usedShare+' '+tr('of salary','من الراتب')+'</span></div>'+
-            '<div class="catFineV7">'+stat+' · '+line+'</div>'+
-            (limit>0?'<div class="bar" aria-label="Spending relative to budget"><div class="fill '+(over?'over':'')+'" style="width:'+Math.min(100,percent)+'%"></div></div>':'')+
-            '<div class="catFootV7"><div class="catBudgetFieldV7"><label for="cat-'+safe(c.id)+'">'+tr('Monthly budget (€)','الميزانية الشهرية (€)')+'</label>'+
-            '<input id="cat-'+safe(c.id)+'" type="number" min="0" step="0.01" inputmode="decimal" data-limit="'+safe(c.id)+'" value="'+limit+'" aria-label="Monthly budget for '+safe(c.name)+'"></div>'+
-            (c.id==='investments'?'<button type="button" class="catQuickBtn" data-invest-shortcut="1">'+tr('View investments ↗','عرض الاستثمارات ↗')+'</button>':
-            '<button type="button" class="catQuickBtn" data-quick-category="'+safe(c.id)+'" aria-label="Add '+safe(c.name)+' expense">'+tr('+ Add expense','+ إضافة مصروف')+'</button>')+'</div></div>';
+          const used=categorySpent(c.id),limit=num(c.limit),over=limit>0&&used>limit;
+          const isInvestment=c.id==='investments';
+          const nm=names[c.id]||['◈',c.name];
+          const shortName=safe(nm[1]);
+          const percent=share(used);
+          const remain=limit-used;
+          const remainingText=limit>0?(over?fmt(Math.abs(remain))+' '+tr('over','تجاوز'):fmt(remain)+' '+tr('left','متبقي')):'';
+          const budgetText=limit?tr('Budget','الميزانية')+' '+fmt(limit):tr('Set budget','تحديد الميزانية');
+          const pctBudget=limit?Math.min(100,100*used/limit):0;
+          return '<div class="budgetItem catV7">'+
+            '<div class="budgetItemTop"><div class="budgetIdentity"><span class="budgetIcon" aria-hidden="true">'+nm[0]+'</span><span class="budgetName">'+shortName+'</span></div>'+
+            '<span class="budgetPercent" aria-label="'+percent+' '+tr('of salary','من الراتب')+'">'+percent+'</span></div>'+
+            '<div class="budgetItemMiddle"><strong class="budgetSpent">'+fmt(used)+'</strong>'+
+            (isInvestment?'<button class="budgetAdd" data-invest-shortcut="1" type="button">'+tr('View','عرض')+'</button>':
+             '<button class="budgetAdd" data-quick-category="'+safe(c.id)+'" type="button" aria-label="'+tr('Add expense for','أضف مصروفًا لفئة')+' '+shortName+'">'+tr('+ Add','+ إضافة')+'</button>')+
+            '</div>'+
+            '<div class="budgetItemBottom"><details class="budgetAdjust"><summary>'+budgetText+' <span aria-hidden="true">⌄</span></summary>'+
+            '<div class="budgetEdit"><label for="cat-'+safe(c.id)+'">'+tr('Monthly limit (€)','الحد الشهري (€)')+'</label>'+
+            '<input id="cat-'+safe(c.id)+'" type="number" min="0" step="0.01" inputmode="decimal" data-limit="'+safe(c.id)+'" value="'+limit+'" aria-label="'+tr('Monthly budget for','الميزانية الشهرية لفئة')+' '+shortName+'"></div></details>'+
+            (remainingText?'<span class="budgetRemaining '+(over?'negative':'')+'">'+remainingText+'</span>':'')+'</div>'+
+            (limit>0?'<div class="budgetTrack" aria-label="'+Math.round(100*used/limit)+'% '+tr('of budget used','من الميزانية مستهلك')+'"><span class="'+(over?'over':'')+'" style="width:'+pctBudget+'%"></span></div>':'')+
+            '</div>';
         }).join('');
-        root.querySelectorAll('[data-limit]').forEach(inp=>inp.addEventListener('change',()=>{
-          const c=state.categories.find(c=>c.id===inp.dataset.limit);
-          if(c){c.limit=num(inp.value);render()}
+        root.querySelectorAll('[data-limit]').forEach(input=>input.addEventListener('change',()=>{
+          const category=state.categories.find(x=>x.id===input.dataset.limit);
+          if(category){category.limit=num(input.value);render()}
         }));
         root.querySelectorAll('[data-quick-category]').forEach(btn=>btn.addEventListener('click',()=>openDialog(btn.dataset.quickCategory)));
         root.querySelectorAll('[data-invest-shortcut]').forEach(btn=>btn.addEventListener('click',()=>setTab('invest')));
