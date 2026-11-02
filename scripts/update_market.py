@@ -2,7 +2,7 @@
 """Public-source Casablanca watch. No login, secrets or paid-price scraping."""
 from pathlib import Path
 from datetime import datetime, timezone
-from urllib.parse import quote
+from urllib.parse import quote, urljoin
 from email.utils import parsedate_to_datetime
 import json, logging, re, xml.etree.ElementTree as ET
 import requests
@@ -76,6 +76,33 @@ def rss(q,category):
             out.append(dict(title=title[:220],date=day,source=source[:80],category=category,url=url))
     return out
 
+def official_ammc():
+    """Best-effort official regulator news. Only emit links actually hosted at AMMC."""
+    from urllib.parse import urlparse
+    site="https://www.ammc.ma/fr/actualites/communique-presse"
+    soup=BeautifulSoup(request(site),"html.parser")
+    items=[];seen=set()
+    for a in soup.select('a[href]'):
+        title=a.get_text(" ",strip=True)
+        if not (24<len(title)<240):continue
+        if not re.search(r"introduction en bourse|vise le prospectus|offre publique|sociétés cotées|communiqué",title,re.I):continue
+        href=urljoin(site,a.get("href",""))
+        host=urlparse(href).hostname or ""
+        if host not in ("ammc.ma","www.ammc.ma"):continue
+        if href in seen:continue
+        seen.add(href)
+        parent=a
+        for _ in range(3):
+            if parent.parent:parent=parent.parent
+        blob=parent.get_text(" ",strip=True)
+        dates=re.findall(r"\b(\d{2})/(\d{2})/(20\d{2})\b",blob)
+        if not dates:continue
+        dd,mm,yy=dates[0];d=f"{yy}-{mm}-{dd}"
+        if d>datetime.now(timezone.utc).strftime("%Y-%m-%d"):continue
+        items.append(dict(title=title[:220],date=d,source="AMMC official",category="official",url=href))
+        if len(items)>=15:break
+    return items
+
 def main():
     today=datetime.now(timezone.utc).strftime("%Y-%m-%d")
     market=read("market.json")
@@ -100,6 +127,10 @@ def main():
         try:items+=rss(query,cat)
         except (requests.RequestException,ValueError,ET.ParseError) as exc:
             logging.warning("News feed unavailable: %s",exc)
+    try:
+        items+=official_ammc()
+    except (requests.RequestException,ValueError) as exc:
+        logging.warning("Official AMMC feed unavailable: %s",exc)
     if items:
         old=news.get("articles",[])
         seen=set()
