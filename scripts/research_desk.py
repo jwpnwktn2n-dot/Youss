@@ -51,9 +51,15 @@ def analyze(s):
     elif critical or score<48:stance="Caution"
     elif score>=73 and all(x is not None for x in [rev,profit,pe,vol]):stance="Research"
     else:stance="Watch"
+    # Visible risk bands: keep the displayed score consistent with critical warnings.
+    # This measures relative data-screening strength, not probability of investment loss.
+    if stance=="Research":risk_band,risk_score,risk_label="lower",score,"Lower risk (screened)"
+    elif stance=="Watch":risk_band,risk_score,risk_label="moderate",min(score,69),"Moderate risk"
+    elif stance=="Caution":risk_band,risk_score,risk_label="high",min(score,44),"High risk"
+    else:risk_band,risk_score,risk_label="unknown",None,"Not rated"
     return {"symbol":str(s.get("symbol","")).upper()[:10],
       "name":str(s.get("name",""))[:100],"sector":str(s.get("sector",""))[:90],
-      "stance":stance,"score":score,"coverage":completeness,"confidence":"Preliminary",
+      "stance":stance,"score":score,"riskScore":risk_score,"riskBand":risk_band,"riskLabel":risk_label,"coverage":completeness,"confidence":"Preliminary",
       "price":price,"ret1m":mom,"volume":vol,"pe":pe,"revenueCagr":rev,"profitCagr":profit,
       "scoreComponents":parts,"positiveFacts":good[:4],"riskFacts":risk[:5],
       "unknowns":["Audited financial statements","Debt and free cash flow",
@@ -81,6 +87,9 @@ def report():
     if age is None or age>7:
         for row in rows:
             row["stance"]="Data stale"
+            row["riskScore"]=None
+            row["riskBand"]="unknown"
+            row["riskLabel"]="Outdated data"
             row["riskFacts"].insert(0,"Market dataset over 7 days old")
     return {
       "generatedAt":NOW.isoformat(timespec="seconds"),
@@ -89,6 +98,7 @@ def report():
       "marketScope":market.get("scope","Tracked sample, not all listed equities"),
       "mode":"rules","llmActivated":False,"aiCommentary":None,
       "method":"Preliminary rules-based research screen; not a predictive model or trade execution",
+      "riskLegend":{"lower":"Lower risk among screened shares — not risk-free","moderate":"Moderate relative risk / verify more data","high":"High risk flags detected","unknown":"Missing or stale evidence"},
       "methodNote":"Reported growth figures may cover different historical periods. P/E is not sector-adjusted, source prices may omit dividend adjustments, volume is indicative. Fundamental diligence requires audited filings, cash flow, debt, sector peers, and corporate-action history.",
       "criteria":["Historical revenue trend","Historical earnings trend","P/E (not sector adjusted)","Trading volume","1-month move (minor weight)"],
       "limits":["No complete adjusted 24-month returns","No verified debt or cash-flow data","Headline matching does not establish event impact"],
