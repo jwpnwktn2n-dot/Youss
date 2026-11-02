@@ -9,14 +9,25 @@
   let report=null,filter='all',needle='',count=10,loading=false;
   const numeric=n=>typeof n==='number'&&Number.isFinite(n);
   const cleanURL=u=>typeof u==='string'&&/^https:\/\//i.test(u)&&u.length<1600?u:null;
-  function status(st){
-    return ({
-      'Research':['Research further','للبحث المتعمق','positive'],
-      'Watch':['Watch','المتابعة','warning'],
-      'Caution':['Caution','الحذر','negative'],
-      'Data stale':['Stale data','بيانات قديمة','warning'],
-      'Insufficient data':['Insufficient data','بيانات غير كافية','warning']
-    }[st]||['Review','مراجعة','warning']);
+  function riskFor(stock){
+    // Prefer the server's normalized risk band, with compatibility for older snapshots.
+    const stale=['Data stale','Insufficient data'].includes(stock.stance);
+    let band=stale?'unknown':stock.riskBand;
+    if(!['lower','moderate','high','unknown'].includes(band)){
+      band=stock.stance==='Research'?'lower':stock.stance==='Watch'?'moderate':stock.stance==='Caution'?'high':'unknown';
+    }
+    const raw=Number(stock.riskScore??stock.score);
+    let score=Number.isFinite(raw)?Math.min(100,Math.max(0,Math.round(raw))):null;
+    if(band==='moderate'&&score!==null)score=Math.min(score,69);
+    if(band==='high'&&score!==null)score=Math.min(score,44);
+    if(band==='unknown')score=null;
+    const names={
+      lower:['🟢 Safer candidate','🟢 مرشح أقل مخاطرة','riskLow'],
+      moderate:['🟡 Moderate risk','🟡 مخاطر متوسطة','riskMedium'],
+      high:['🔴 High risk','🔴 مخاطر مرتفعة','riskHigh'],
+      unknown:['⚪ Not rated','⚪ غير مصنف','riskUnknown']
+    };
+    return {band,score,caption:names[band][arabic()?1:0],className:names[band][2]};
   }
   function fact(text){return '<li>'+esc(text)+'</li>'}
   function relatedNews(entries){
@@ -30,14 +41,15 @@
     }).join('');
   }
   function card(stock){
-    const [en,ar,cl]=status(stock.stance);
-    const p=stock.positiveFacts||[],r=stock.riskFacts||[],c=stock.scoreComponents||{};
+    const risk=riskFor(stock);
+    const p=stock.positiveFacts||[],r=stock.riskFacts||[];
     const entries=Array.isArray(stock.headlines)?stock.headlines:[];
-    return '<article class="deskCompany">'+
+    return '<article class="deskCompany '+risk.className+'">'+
       '<div class="deskCompanyHeader"><div class="deskName"><span class="deskAvatar" aria-hidden="true">'+esc((stock.symbol||'?').slice(0,2))+'</span><div><strong>'+esc(stock.name)+'</strong><small>'+esc(stock.symbol)+' · '+esc(stock.sector)+'</small></div></div>'+
-      '<span class="deskSignal '+cl+'">'+tr(en,ar)+'</span></div>'+
-      '<div class="deskNumbers"><span>'+tr('Screen','النتيجة')+' <b>'+Number(stock.score||0)+'/100</b></span><span>'+tr('P/E','مضاعف الربح')+' <b>'+(numeric(stock.pe)?stock.pe.toFixed(1):'—')+'</b></span>'+
+      '<span class="deskSignal riskTag '+risk.className+'">'+risk.caption+'</span></div>'+
+      '<div class="deskNumbers"><span>'+tr('Risk screen','مؤشر المخاطر')+' <b class="riskNumber '+risk.className+'">'+(risk.score===null?'—':risk.score+'/100')+'</b></span><span>'+tr('P/E','مضاعف الربح')+' <b>'+(numeric(stock.pe)?stock.pe.toFixed(1):'—')+'</b></span>'+
       '<span>'+tr('1 month','شهر')+' <b class="'+(stock.ret1m>=0?'positive':'negative')+'">'+pct(stock.ret1m)+'</b></span></div>'+
+      '<div class="deskRiskMeter" role="img" aria-label="'+esc(risk.caption)+' · '+(risk.score===null?'unrated':risk.score+'/100')+'"><span class="'+risk.className+'" style="width:'+(risk.score===null?0:risk.score)+'%"></span></div>'+
       '<details class="deskExpand"><summary>'+tr('Why this assessment?','لماذا هذا التقييم؟')+' <span>⌄</span></summary>'+
       '<div class="deskDetail"><div class="deskMetricLine">'+tr('Latest reference price','السعر المرجعي')+': <b>'+mad(stock.price)+'</b></div>'+
       '<div class="deskMetricLine">'+tr('Historical revenue growth','نمو الإيرادات التاريخي')+': <b>'+pct(stock.revenueCagr)+'</b></div>'+
@@ -52,14 +64,14 @@
     if(!report)return;
     const stocks=Array.isArray(report.stocks)?report.stocks:[];
     const stale=report.stocks?.length&&stocks[0].stance==='Data stale';
-    const reviewed=stocks.filter(x=>x.stance==='Research').length;
-    const watch=stocks.filter(x=>x.stance==='Watch').length;
-    const cautious=stocks.filter(x=>x.stance==='Caution').length;
+    const reviewed=stocks.filter(x=>riskFor(x).band==='lower').length;
+    const watch=stocks.filter(x=>riskFor(x).band==='moderate').length;
+    const cautious=stocks.filter(x=>riskFor(x).band==='high').length;
     const updated=report.marketUpdated||'unknown';
     $('deskDataAge').textContent=tr('Market snapshot','لقطة السوق')+' '+updated+' · '+tr('News','الأخبار')+' '+(report.newsUpdated||'unknown')+' · '+tr('Not real-time','ليست مباشرة');
     $('deskSummary').innerHTML=[
-      ['Reviewed',stocks.length],['Research',reviewed],['Watch',watch],['Caution',cautious]
-    ].map(([name,value])=>'<div><strong>'+value+'</strong><span>'+tr(name,{Reviewed:'المغطاة',Research:'للبحث',Watch:'للمتابعة',Caution:'للحذر'}[name])+'</span></div>').join('');
+      ['Reviewed',stocks.length],['Lower risk',reviewed],['Medium risk',watch],['High risk',cautious]
+    ].map(([name,value])=>'<div><strong>'+value+'</strong><span>'+tr(name,{Reviewed:'المغطاة','Lower risk':'مخاطر أقل','Medium risk':'متوسطة','High risk':'مرتفعة'}[name])+'</span></div>').join('');
     $('deskMode').textContent=report.llmActivated?tr('AI-assisted','بمساعدة الذكاء الاصطناعي'):tr('Rules-based','تقييم آلي بقواعد واضحة');
     $('deskModelStatus').textContent=report.llmActivated?tr('Model-generated context, source data may be delayed','ملخص نموذجي والبيانات قد تتأخر'):tr('Transparent scoring, no AI model activated','تنقيط واضح؛ نموذج الذكاء الاصطناعي غير مفعل');
     const ai=report.aiCommentary;
@@ -68,7 +80,7 @@
       tr('The list highlights companies for deeper research, not stocks to purchase. Valuation and liquidity can outweigh recent price growth. Verify audited earnings, debt and sector comparisons.','تعرض القائمة شركات تستحق البحث، وليست توصيات شراء. يجب فحص التقييم والسيولة والحسابات المدققة والديون ومقارنتها بالقطاع.'));
     $('deskAIBullets').innerHTML=ai?(ai.risks?.length?'<h4>'+tr('Risks highlighted','مخاطر أساسية')+'</h4><ul>'+ai.risks.map(fact).join('')+'</ul>':'')+
       (ai.questions?.length?'<h4>'+tr('Questions before investing','أسئلة قبل الاستثمار')+'</h4><ul>'+ai.questions.map(fact).join('')+'</ul>':''):'';
-    const visible=stocks.filter(s=>(filter==='all'||s.stance===filter)&&
+    const visible=stocks.filter(s=>(filter==='all'||riskFor(s).band===filter)&&
        (s.name+' '+s.symbol+' '+s.sector).toLowerCase().includes(needle));
     $('deskCompanies').innerHTML=visible.length?visible.slice(0,count).map(card).join(''):'<p class="muted">'+tr('No stocks match this filter.','لا توجد أسهم مطابقة لهذا البحث.')+'</p>';
     $('deskCoverage').textContent=visible.length+' / '+stocks.length+' '+tr('covered','مغطاة');
