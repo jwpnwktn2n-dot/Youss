@@ -99,6 +99,50 @@ html.auth-ok .authLayer{display:none}
 .editExpenseBtn{border:1px solid #34536a;background:#213449;color:#c3dfec;border-radius:9px;padding:7px 9px;font-size:12px;font-weight:700}
 html[dir="rtl"] .catHeadV7,html[dir="rtl"] .catFootV7{direction:rtl}
 @media(max-width:390px){.budgetSnapshot{grid-template-columns:repeat(2,minmax(0,1fr))}.budgetSummaryStat:last-child{grid-column:span 2}.catSpentV7{font-size:18px}}
+
+/* Style A — compact, uncluttered budget list */
+.cleanBudget{padding:19px 19px 13px}
+.cleanBudget h2{font-size:19px;letter-spacing:-.35px;margin:0}
+.cleanBudget .budgetSubtitle{margin:4px 0 0;font-size:12px;color:#97adbe}
+.cleanBudget .budgetSnapshot{margin:18px 0 0;gap:7px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cleanBudget .budgetSummaryStat{padding:12px 10px;background:#15263a;border:1px solid #293f54;border-radius:13px}
+.cleanBudget .budgetSummaryStat .label{font-size:11px;color:#97adbe}
+.cleanBudget .budgetSummaryStat strong{font-size:clamp(14px,2.7vw,19px);line-height:1.3;margin:5px 0 0;font-variant-numeric:tabular-nums;letter-spacing:-.25px}
+.cleanBudget .budgetSummaryStat small{margin-top:2px;color:#7ecfbb;font-weight:650;font-size:11px}
+.budgetMiniAllocation{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 1px 16px;font-size:12px;color:#94a9bc}
+.budgetMiniAllocation strong{color:#d2e9e7;font-weight:750;margin-inline-start:5px;font-variant-numeric:tabular-nums}
+.cleanBudget .categoryList{border-top:1px solid #2b4153}
+.cleanBudget .budgetItem{padding:15px 0 16px;margin:0;border-bottom:1px solid #293d50}
+.cleanBudget .budgetItem:last-child{border-bottom:0}
+.budgetItemTop,.budgetItemMiddle,.budgetItemBottom{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.budgetIdentity{display:flex;align-items:center;gap:10px;min-width:0}
+.budgetIcon{width:32px;height:32px;display:grid;place-items:center;border-radius:11px;background:#23374b;font-size:16px;flex:none}
+.budgetName{font-size:14px;font-weight:760;line-height:1.35;color:#e8f4fa;overflow-wrap:anywhere}
+.cleanBudget .budgetPercent{font-weight:750;font-size:11px;line-height:1.2;color:#89d5c2;background:#18372f;border:1px solid #295c4f;padding:5px 9px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.budgetItemMiddle{margin:9px 0 7px}
+.budgetSpent{font-size:23px;font-weight:820;letter-spacing:-.65px;font-variant-numeric:tabular-nums;color:#f0faff}
+.budgetAdd{font-size:12px;font-weight:760;min-height:36px;min-width:75px;padding:7px 12px;border:1px solid #3a927d;border-radius:11px;color:#a5f0d8;background:#184036;white-space:nowrap;transition:background .15s ease,transform .15s ease}
+.budgetAdd:active{transform:scale(.96);background:#24614f}
+.budgetItemBottom{font-size:11px;line-height:1.4;color:#94acbd;align-items:flex-start}
+.budgetAdjust{min-width:0}
+.budgetAdjust summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:5px;max-width:100%;border-radius:6px;color:#9bb1c3;outline-offset:2px}
+.budgetAdjust summary::-webkit-details-marker{display:none}
+.budgetAdjust summary span{font-size:12px;opacity:.8;transition:transform .15s}
+.budgetAdjust[open] summary span{transform:rotate(180deg)}
+.budgetEdit{margin-top:9px;padding:9px 0 5px;display:grid;gap:5px;max-width:175px}
+.budgetEdit label{color:#9bb1c3;font-size:11px}
+.budgetEdit input{height:37px;width:155px;max-width:100%;background:#101e30;border:1px solid #3e5367;border-radius:9px;color:#fff;padding:7px 10px;font-size:15px}
+.budgetRemaining{white-space:nowrap;text-align:end}
+.budgetRemaining.negative{color:#ff8b9a}
+.budgetTrack{height:4px;overflow:hidden;background:#2c4053;border-radius:999px;margin-top:11px}
+.budgetTrack span{display:block;height:100%;background:#50d4a6;border-radius:inherit;transition:width .2s}
+.budgetTrack span.over{background:#ff8399}
+.budgetNewCategory{display:block;background:transparent;color:#a4d8ce;border:0;padding:13px 2px 6px;font-size:12px;font-weight:700;min-height:40px}
+.expenseHistory{margin-top:14px}
+.expenseHistory h2{margin:0}
+html[dir="rtl"] .budgetItemTop,html[dir="rtl"] .budgetItemMiddle,html[dir="rtl"] .budgetItemBottom,html[dir="rtl"] .budgetMiniAllocation{direction:rtl}
+@media(max-width:590px){.cleanBudget{padding:16px 15px 10px}.cleanBudget .budgetSummaryStat{padding:11px 8px}.budgetSpent{font-size:22px}.budgetItemTop,.budgetItemMiddle,.budgetItemBottom{gap:8px}.budgetMiniAllocation{font-size:11px}}
+@media(max-width:355px){.cleanBudget .budgetSummaryStat strong{font-size:13px}.budgetName{font-size:13px}.cleanBudget .budgetPercent{font-size:10px;padding:4px 7px}}
 </style>
 </head>
 <body>
