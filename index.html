@@ -196,6 +196,39 @@ html[dir="rtl"] .budgetItemTop,html[dir="rtl"] .budgetItemMiddle,html[dir="rtl"]
 <div class="card"><h2>KDP income &amp; purchase history</h2><div id="kdpActivity"></div></div>
 <div class="notice">⚠️ Check your brokerage access, currency costs and tax obligations before investing KDP royalties. Never enter bank passwords here.</div>
 </section>
+<section aria-label="Casablanca investment research desk" class="section" id="research">
+<div class="hero deskHero">
+  <div class="eyebrow">🇲🇦 CASABLANCA RESEARCH DESK</div>
+  <div class="big deskTitle">Invest with evidence.</div>
+  <p class="micro">Screen companies on growth, valuation, liquidity and risk. Read source-linked news before making decisions.</p>
+</div>
+<div class="card deskStatusCard">
+  <div class="row wrap"><div><strong class="deskLabel">Research status</strong><div class="muted" id="deskDataAge">Loading dated market evidence…</div></div><button id="deskRefresh" class="secondary tiny" type="button">↻ Refresh</button></div>
+  <div class="deskStatusGrid" id="deskSummary"></div>
+</div>
+<div class="card deskInsight">
+  <div class="row wrap"><div><h2>Research briefing</h2><p class="muted" id="deskModelStatus">Evidence-based analysis</p></div><span id="deskMode" class="dataTag">Checking</span></div>
+  <p id="deskExecutive" class="deskExecutive">Loading analysis…</p>
+  <div id="deskAIBullets"></div>
+  <div class="deskDisclaimer">Scores are a screening aid, not predictions or trading instructions. Scores are not comparable to audited investment-bank research. Check the age and original sources of each figure.</div>
+</div>
+<div class="card"><div class="row wrap"><h2>Company research</h2><span id="deskCoverage" class="dataTag">—</span></div>
+<div class="filters deskFilters"><button class="filterBtn selected" type="button" data-desk-filter="all">All</button><button class="filterBtn" type="button" data-desk-filter="Research">Research further</button><button class="filterBtn" type="button" data-desk-filter="Watch">Watch</button><button class="filterBtn" type="button" data-desk-filter="Caution">Caution</button></div>
+<input id="deskSearch" class="searchInput deskSearch" type="search" placeholder="Search a stock or company" aria-label="Search research companies">
+<div id="deskCompanies" class="deskCompanies"><p class="muted">Loading…</p></div>
+<button id="deskMore" class="secondary deskMore hide" type="button">Show 10 more</button>
+</div>
+<div class="card">
+<div class="row wrap"><h2>Latest market developments</h2><a class="source" href="https://www.ammc.ma/fr/actualites/communique-presse" target="_blank" rel="noopener noreferrer">Official AMMC updates</a></div>
+<div id="deskNews" class="deskNews"><p class="muted">Loading headlines…</p></div>
+</div>
+<div class="card deskMethod">
+<h2>How these assessments are made</h2>
+<p class="muted">Research rankings use historical revenue and profit growth, indicative P/E, reported volume and one-month momentum. High scores mean <b>worth investigating</b>, not “buy”. Negatives include weak profits, excessive valuation, thin trading, missing filings and stale prices.</p>
+<p class="muted">No automatic buying, bank data, personalized position sizing, price targets, or investment guarantees. To add genuine generative-AI commentary, the repository owner must configure a private server-side API key; otherwise the system clearly labels the report rule-based.</p>
+<a class="source" href="https://www.casablanca-bourse.com/en/market-data/Cours" target="_blank" rel="noopener noreferrer">Official historical prices</a>
+</div>
+</section>
 <section aria-label="Casablanca Stock Exchange analytics" class="section" id="market">
 <div class="hero"><div class="eyebrow">🇲🇦 Casablanca exchange · Market intelligence</div><div class="big" style="font-size:clamp(24px,5vw,34px)">Find growth, not hype.</div><div class="micro">Review a sourced stock sample, financial growth and market liquidity — in Moroccan dirhams (MAD).</div></div>
 <div class="marketSummary"><div class="marketChip"><span class="label">MASI index</span><b id="masiValue">16,537.91</b><span class="marketSmall" id="masiNote">30 Oct 2026 close</span></div><div class="marketChip"><span class="label">1-month coverage</span><b id="marketCoverage">12 stocks</b><span class="marketSmall">Sourced sample only</span></div><div class="marketChip"><span class="label">Market data status</span><b id="marketStatus">Reference snapshot</b><span class="marketSmall" id="marketUpdated">30 Oct 2026 · not live</span></div></div>
@@ -219,7 +252,7 @@ html[dir="rtl"] .budgetItemTop,html[dir="rtl"] .budgetItemMiddle,html[dir="rtl"]
 <button class="menuLink" data-nav="budget" type="button"><span class="menuIcon">💳</span><span class="menuText"><strong>Budget &amp; expenses</strong><span>Divide your salary and track spending</span></span><span class="menuArrow">›</span></button>
 <button class="menuLink" data-nav="invest" type="button"><span class="menuIcon">📈</span><span class="menuText"><strong>My investments</strong><span>Your €100 monthly plan</span></span><span class="menuArrow">›</span></button>
 <button class="menuLink" data-nav="goals" type="button"><span class="menuIcon">🎯</span><span class="menuText"><strong>Savings goals</strong><span>Emergency fund and vacation</span></span><span class="menuArrow">›</span></button>
-<div class="menuGroup">Moroccan market</div><button class="menuLink" data-nav="kdp" type="button"><span class="menuIcon">💰</span><span class="menuText"><strong>KDP → Casablanca portfolio</strong><span>Royalties &amp; share purchases</span></span><span class="menuArrow">›</span></button>
+<div class="menuGroup">Moroccan market</div><button class="menuLink" data-nav="research" type="button"><span class="menuIcon">🧠</span><span class="menuText"><strong>Investment Research</strong><span>Data-driven opportunities &amp; risks</span></span><span class="menuArrow">›</span></button><button class="menuLink" data-nav="kdp" type="button"><span class="menuIcon">💰</span><span class="menuText"><strong>KDP → Casablanca portfolio</strong><span>Royalties &amp; share purchases</span></span><span class="menuArrow">›</span></button>
 <button class="menuLink" data-nav="market" type="button"><span class="menuIcon">🇲🇦</span><span class="menuText"><strong>Casablanca stocks</strong><span>1-month &amp; 2-year analysis</span></span><span class="menuArrow">›</span></button>
 <button class="menuLink" data-nav="news" type="button"><span class="menuIcon">📰</span><span class="menuText"><strong>IPO radar &amp; news</strong><span>Announcements and company headlines</span></span><span class="menuArrow">›</span></button>
 <div class="menuGroup">Preferences</div>
@@ -244,7 +277,7 @@ html[dir="rtl"] .budgetItemTop,html[dir="rtl"] .budgetItemMiddle,html[dir="rtl"]
       function categorySpent(id){return (id==='investments'?invested():0)+data().expenses.filter(e=>e.category===id).reduce((a,e)=>a+num(e.amount),0)}
       function closeMenu(restoreFocus=false){const wasOpen=$('sideDrawer').classList.contains('open');$('sideDrawer').classList.remove('open');$('menuBackdrop').classList.remove('open');$('sideDrawer').setAttribute('aria-hidden','true');$('menuTrigger').setAttribute('aria-expanded','false');document.body.classList.remove('menuOpen');if(restoreFocus&&wasOpen)$('menuTrigger').focus()}
       function openMenu(){$('sideDrawer').classList.add('open');$('menuBackdrop').classList.add('open');$('sideDrawer').setAttribute('aria-hidden','false');$('menuTrigger').setAttribute('aria-expanded','true');document.body.classList.add('menuOpen');$('drawerClose').focus()}
-      function setTab(t){if(!$(t)||!$(t).classList.contains('section'))return;tab=t;document.querySelectorAll('[data-nav]').forEach(b=>{const active=b.dataset.nav===t;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===t));$('addExpenseFloat').classList.toggle('hide',t!=='overview');$('monthNav').classList.toggle('hide',['market','news','goals','kdp'].includes(t));$('monthEyebrow').textContent=t==='settings'?'EDIT INCOME FOR':'YOUR DASHBOARD';closeMenu();render();window.scrollTo({top:0,behavior:'auto'})}
+      function setTab(t){if(!$(t)||!$(t).classList.contains('section'))return;tab=t;document.querySelectorAll('[data-nav]').forEach(b=>{const active=b.dataset.nav===t;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===t));$('addExpenseFloat').classList.toggle('hide',t!=='overview');$('monthNav').classList.toggle('hide',['market','news','goals','kdp','research'].includes(t));$('monthEyebrow').textContent=t==='settings'?'EDIT INCOME FOR':'YOUR DASHBOARD';closeMenu();render();window.scrollTo({top:0,behavior:'auto'})}
       function render(){const d=data();$('monthTitle').textContent=month.toLocaleDateString('en-GB',{month:'long',year:'numeric'});$('salary').value=d.salary;$('bonus').value=d.bonus;
         $('cashAvailable').textContent=money(income()-spent());$('cashAvailable').classList.toggle('negative',income()-spent()<0);$('totalIncome').textContent=money(income());$('totalAllocated').textContent=money(allocated());$('unallocated').textContent=money(income()-allocated());$('unallocated').className='n '+(income()-allocated()<0?'negative':'');$('budgetAllocated').textContent=money(allocated());$('budgetUnallocated').textContent=money(income()-allocated());$('budgetUnallocated').className='n '+(income()-allocated()<0?'negative':'');
         $('spentTotal').textContent=money(spent());let pct=income()?100*spent()/income():0;$('progressLabel').textContent=`${Math.round(pct)}% of income used`;$('overallBar').style.width=Math.min(100,pct)+'%';$('overallBar').classList.toggle('over',pct>100);
@@ -387,5 +420,5 @@ html[dir="rtl"] .budgetItemTop,html[dir="rtl"] .budgetItemMiddle,html[dir="rtl"]
       render();loadCasa();if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
     })();
   </script>
-<div id="syncToast" role="status" aria-live="polite" class="syncToast"></div><script src="./kdp.js" defer></script><script src="./enhancements.js" defer></script><script src="./ar-dict.js" defer></script><script src="./i18n.js" defer></script><script src="./login.js" defer></script></body>
+<div id="syncToast" role="status" aria-live="polite" class="syncToast"></div><script src="./kdp.js" defer></script><script src="./enhancements.js" defer></script><script src="./ar-dict.js" defer></script><script src="./i18n.js" defer></script><script src="./login.js" defer></script><script src="./research.js" defer></script></body>
 </html>
