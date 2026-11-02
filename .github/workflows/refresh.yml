@@ -30,6 +30,23 @@ jobs:
         run: pip install -r scripts/requirements.txt
       - name: Refresh public Casablanca prices and news
         run: python scripts/update_market.py
+      - name: Generate evidence-based investment research
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-6-luna
+        run: python scripts/research_desk.py
+      - name: Validate generated market research
+        run: |
+          python -m py_compile scripts/research_desk.py
+          python -m json.tool data/research.json > /dev/null
+          python - <<'PY'
+          import json
+          r=json.load(open('data/research.json'))
+          assert r['stocks'], 'No screened companies'
+          assert all('riskFacts' in s and 'score' in s for s in r['stocks'])
+          assert not r['llmActivated'] or isinstance(r['aiCommentary'],dict)
+          print('Validated',len(r['stocks']),'company assessments; mode',r['mode'])
+          PY
       - name: Validate JavaScript before publishing
         run: |
           node --check kdp.js
@@ -37,6 +54,7 @@ jobs:
           node --check ar-dict.js
           node --check i18n.js
           node --check login.js
+          node --check research.js
       - name: Validate inline app code
         run: |
           python - <<'PY'
@@ -54,8 +72,8 @@ jobs:
       - name: Prepare public website files
         run: |
           mkdir -p _site/data
-          cp index.html manifest.webmanifest icon.svg sw.js kdp.js enhancements.js ar-dict.js i18n.js login.js .nojekyll _site/
-          cp data/market.json data/news.json _site/data/
+          cp index.html manifest.webmanifest icon.svg sw.js kdp.js enhancements.js ar-dict.js i18n.js login.js research.js .nojekyll _site/
+          cp data/market.json data/news.json data/research.json _site/data/
           test -s _site/index.html
           python -m json.tool _site/data/market.json > /dev/null
           python -m json.tool _site/data/news.json > /dev/null
