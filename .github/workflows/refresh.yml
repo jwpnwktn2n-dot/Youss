@@ -35,6 +35,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-6-luna
         run: python scripts/research_desk.py
+      - name: Validate risk scoring rules
+        run: python tests/risk-engine.py
       - name: Validate generated market research
         run: |
           python -m py_compile scripts/research_desk.py
@@ -69,6 +71,7 @@ jobs:
         run: |
           npm install --no-save --ignore-scripts jsdom@26
           node tests/budget-ui.cjs
+          node tests/research-colors.cjs
       - name: Prepare public website files
         run: |
           mkdir -p _site/data
